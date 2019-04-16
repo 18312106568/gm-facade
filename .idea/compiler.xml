@@ -6,18 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gm-facade-fee" />
         <module name="gm-facade-user" />
         <module name="gmfacadefee" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="gm-facade" target="1.8" />
+      <module name="gm-facade" target="1.5" />
+      <module name="gm-facade-fee" target="1.8" />
       <module name="gm-facade-user" target="1.8" />
       <module name="gmfacadefee" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gm-facade-fee" options="-parameters" />
       <module name="gm-facade-user" options="-parameters" />
       <module name="gmfacadefee" options="-parameters" />
     </option>

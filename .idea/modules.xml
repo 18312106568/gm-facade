@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gm-facade.iml" filepath="$PROJECT_DIR$/gm-facade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gm-facade-fee/gm-facade-fee.iml" filepath="$PROJECT_DIR$/gm-facade-fee/gm-facade-fee.iml" />
       <module fileurl="file://$PROJECT_DIR$/gm-facade-user/gm-facade-user.iml" filepath="$PROJECT_DIR$/gm-facade-user/gm-facade-user.iml" />
       <module fileurl="file://$PROJECT_DIR$/gm-facade-fee/gmfacadefee.iml" filepath="$PROJECT_DIR$/gm-facade-fee/gmfacadefee.iml" />
     </modules>
