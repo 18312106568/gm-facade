@@ -4,16 +4,18 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
 
 @Data
 @Entity
 @Table(name = "jf_transport_settle")
-public class TransportSettle {
+public class TransportSettle  {
     /**
      * 运费计算单ID
      */
+    @Id
     @Column(name = "YSJFSETTLEID")
     private Long ysjfsettleid;
 

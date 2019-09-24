@@ -1,5 +1,6 @@
 package gm.facade.fee.entity.base;
 
+import gm.common.base.annotation.FieldName;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,6 +20,7 @@ public class BaseEntity extends IdEntity {
     @Temporal(TemporalType.TIMESTAMP)
     @CreatedDate
     @Column(name = "create_time")
+    @FieldName(name = "创建时间")
     private Date createTime;
 
     /**
@@ -27,17 +29,20 @@ public class BaseEntity extends IdEntity {
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
     @Column(name = "update_time")
+    @FieldName(name = "更改时间")
     private Date updateTime;
 
     /**
      * 创建人
      */
     @Column(name = "create_by")
-    private String createBy;
+    @FieldName(name = "创建人ID")
+    private Long createBy;
 
     /**
      * 更改人
      */
     @Column(name = "update_by")
-    private String updateBy;
+    @FieldName(name = "更改人ID")
+    private Long updateBy;
 }

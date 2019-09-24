@@ -1,6 +1,6 @@
 package gm.facade.fee.constant;
 
-public enum FreightCalculateType {
+public enum CalculateType {
     /**
      * 预估
      */
@@ -14,6 +14,6 @@ public enum FreightCalculateType {
     /**
      * 实付
      */
-    ACTUAL
+    PAYMENT
     ;
 }

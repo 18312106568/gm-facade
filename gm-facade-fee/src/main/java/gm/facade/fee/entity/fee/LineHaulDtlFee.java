@@ -1,7 +1,6 @@
 package gm.facade.fee.entity.fee;
 
 import gm.common.base.annotation.FieldName;
-import gm.facade.fee.entity.base.FreightDoc;
 import gm.facade.fee.entity.base.FreightDtl;
 import lombok.Data;
 
@@ -11,12 +10,13 @@ import javax.persistence.Table;
 import java.util.Date;
 
 /**
- * 干线计费总单
+ * 干线计费细单
  */
 @Data
 @Entity
-@Table(name = "jf_fee_linehaul_doc",catalog = "干线计费总单")
-public class LineHaulDocFee extends FreightDoc {
+@Table(name = "jf_fee_linehaul_dtl",catalog = "干线计费细单")
+public class LineHaulDtlFee extends FreightDtl {
+
     /**
      * 承运商
      */
@@ -67,18 +67,11 @@ public class LineHaulDocFee extends FreightDoc {
     private String warehouse;
 
     /**
-     * 目的仓库
+     * 落地配仓库
      */
-    @FieldName(name = "目的仓库")
-    @Column( name = "purpose_warehouse")
-    private String purposeWarehouse;
-
-    /**
-     * 干线运费
-     */
-    @FieldName(name = "干线运费")
-    @Column( name = "trunk_line_freight")
-    private Double trunkLineFreight;
+    @FieldName(name = "落地配仓库")
+    @Column( name = "ground_depot")
+    private String groundDepot;
 
     /**
      * 经停仓库
@@ -86,21 +79,6 @@ public class LineHaulDocFee extends FreightDoc {
     @FieldName(name = "经停仓库")
     @Column( name = "stopped_warehouse")
     private String stoppedWarehouse;
-
-    /**
-     * 经停仓库数
-     */
-    @FieldName(name = "经停仓库数")
-    @Column( name = "stopped_warehouse_number")
-    private Integer stoppedWarehouseNumber;
-
-    /**
-     * 经停仓库费
-     */
-    @FieldName(name = "经停仓库费")
-    @Column( name = "stopped_warehouse_charges")
-    private Double stoppedWarehouseCharges;
-
-
-
 }
+
+

@@ -1,7 +1,13 @@
 package gm.facade.fee.service;
 
 import gm.common.base.sql.SimpleCondition;
+import gm.facade.fee.constant.FreightConfigType;
+import gm.facade.fee.constant.FreightExpType;
 import gm.facade.fee.entity.FreightConfig;
+import gm.facade.fee.entity.FreightConfigItem;
+import gm.facade.fee.entity.FreightField;
+import gm.facade.fee.entity.FreightMode;
+import gm.facade.fee.entity.base.Freight;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,5 +26,16 @@ public interface FreightConfigService {
       */
      List<FreightConfig> search(Collection<SimpleCondition> mainAndCondition
             ,Collection<SimpleCondition> mainOrCondition
-             ,Map<String,Object> configItemMap);
+             ,Map<FreightField,Object> configItemMap);
+
+     /**
+      * 获取运价表细目
+      * @param freightMode
+      * @param freight
+      * @param expType
+      * @param specialId
+      * @return
+      */
+     Map<Long, FreightConfigItem> getFreightConfigItem(FreightMode freightMode
+             , Freight freight, FreightExpType expType, Long specialId);
 }

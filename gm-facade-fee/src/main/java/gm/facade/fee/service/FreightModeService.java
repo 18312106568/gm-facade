@@ -1,6 +1,9 @@
 package gm.facade.fee.service;
 
+import gm.facade.fee.constant.FreightExpType;
 import gm.facade.fee.entity.FreightMode;
+import gm.facade.fee.entity.base.Freight;
+import gm.facade.fee.entity.wms.TransportBaseV;
 
 import java.util.List;
 
@@ -11,4 +14,19 @@ public interface FreightModeService {
      * @return
      */
     List<FreightMode> getModeByLogistic(Long logisticId);
+
+    /**
+     * 特殊签收单过滤
+     * @param transportBaseVList
+     */
+    void specialModeFilter(List<TransportBaseV> transportBaseVList);
+
+    /**
+     *
+     * @param freightMode
+     * @param freightExpType
+     * @return
+     */
+    Class<Freight> getModeClass(FreightMode freightMode
+            , FreightExpType freightExpType);
 }

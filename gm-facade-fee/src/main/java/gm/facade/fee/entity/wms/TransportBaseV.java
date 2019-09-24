@@ -2,35 +2,25 @@ package gm.facade.fee.entity.wms;
 
 import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
-import gm.facade.fee.entity.FreightMode;
+import gm.facade.fee.constant.CustomType;
+import gm.facade.fee.constant.FreightPayStatus;
+import gm.facade.fee.constant.ReceiptStatus;
+import gm.facade.fee.constant.ReceiptType;
 import gm.facade.fee.entity.base.*;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Map;
 
-@Data
+
 @Entity
-@Table(name = "jf_transport_base")
-public class TransportBaseV extends IdEntity
-        implements Statisticable, Configable, Parametable, BackFillable {
+@Table(name = "jf_transport_base_v",catalog = "签收单视图")
+@Data
+public class TransportBaseV extends Freight {
 
-    /**
-     * 运输日期(取自WMS《签收单查询》/《签收单重派记录查询》)
-     */
-    @FieldName(name = "运输日期")
-    @Column(name = "transport_date")
-    @SerializedName("TRANSPORT_DATE")
-    private Date transportDate;
-
-    /**
-     * 出车时段(通过WMS《签收单查询》的出车时段映射关联出来)
-     */
-    @FieldName(name = "出车时段")
-    @Column(name = "departure_time")
-    @SerializedName("DEPARTURE_TIME")
-    private String departureTime;
+    @Id
+    @Column(name = "id")
+    private Long seqId;
 
     /**
      * 装车单ID(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -49,6 +39,24 @@ public class TransportBaseV extends IdEntity
     private Long receiptId;
 
     /**
+     * 运输日期(取自WMS《签收单查询》/《签收单重派记录查询》)
+     */
+    @FieldName(name = "运输日期")
+    @Column(name = "transport_date")
+    @SerializedName("TRANSPORT_DATE")
+    private Date transportDate;
+
+    /**
+     * 出车时段(通过WMS《签收单查询》的出车时段映射关联出来)
+     */
+    @FieldName(name = "出车时段")
+    @Column(name = "departure_time")
+    @SerializedName("DEPARTURE_TIME")
+    private String departureTime;
+
+
+
+    /**
      * 运输方式(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
     @FieldName(name = "运输方式")
@@ -62,7 +70,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "物流模式")
     @Column(name = "logistics_mode")
     @SerializedName("LOGISTICS_MODE")
-    private String logisticsMode;
+    private Long logisticsMode;
 
     /**
      * 客户名称(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -89,14 +97,6 @@ public class TransportBaseV extends IdEntity
     private Long customerId;
 
     /**
-     * 客户类型(映射关联出来)
-     */
-    @FieldName(name = "客户类型")
-    @Column(name = "customer_type")
-    @SerializedName("CUSTOMER_TYPE")
-    private String customerType;
-
-    /**
      * 送货地址ID(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
     @FieldName(name = "送货地址ID")
@@ -111,46 +111,6 @@ public class TransportBaseV extends IdEntity
     @Column(name = "delivery_address")
     @SerializedName("DELIVERY_ADDRESS")
     private String deliveryAddress;
-
-    /**
-     * 目的地省份(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "目的地省份")
-    @Column(name = "destination_provinces")
-    @SerializedName("DESTINATION_PROVINCES")
-    private String destinationProvinces;
-
-    /**
-     * 目的地城市(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "目的地城市")
-    @Column(name = "destination_city")
-    @SerializedName("DESTINATION_CITY")
-    private String destinationCity;
-
-    /**
-     * 目的地送货点编码(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "目的地送货点编码")
-    @Column(name = "destination_code")
-    @SerializedName("DESTINATION_CODE")
-    private String destinationCode;
-
-    /**
-     * 目的地送货分点编码(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "目的地送货分点编码")
-    @Column(name = "destination_child_code")
-    @SerializedName("DESTINATION_CHILD_CODE")
-    private String destinationChildCode;
-
-    /**
-     * 目的地上楼楼层(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "目的地上楼楼层")
-    @Column(name = "destination_upstairs")
-    @SerializedName("DESTINATION_UPSTAIRS")
-    private String destinationUpstairs;
 
     /**
      * 源运输地址(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -168,85 +128,16 @@ public class TransportBaseV extends IdEntity
     @SerializedName("SRC_TRANSPORT_ADDRESS_ID")
     private Long srcTransportAddressId;
 
-    /**
-     * 起运地省份(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "起运地省份")
-    @Column(name = "origin_provinces")
-    @SerializedName("ORIGIN_PROVINCES")
-    private String originProvinces;
 
     /**
-     * 起运地城市(在运费核算系统中进行手工维护，再通过地址ID关联得出)
+     * 计费用地址ID
      */
-    @FieldName(name = "起运地城市")
-    @Column(name = "origin_city")
-    @SerializedName("ORIGIN_CITY")
-    private String originCity;
+    @FieldName(name = "计费用地址ID")
+    @Column(name = "cost_transport_address_id")
+    @SerializedName("COST_TRANSPORT_ADDRESS_ID")
+    private Long costTransportAddressId;
 
-    /**
-     * 起运地送货点编码(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "起运地送货点编码")
-    @Column(name = "src_shipping_code")
-    @SerializedName("SRC_SHIPPING_CODE")
-    private String srcShippingCode;
 
-    /**
-     * 起运地送货分点编码(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "起运地送货分点编码")
-    @Column(name = "src_child_shipping_code")
-    @SerializedName("SRC_CHILD_SHIPPING_CODE")
-    private String srcChildShippingCode;
-
-    /**
-     * 起运地上楼楼层(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "起运地上楼楼层")
-    @Column(name = "src_floors_num")
-    @SerializedName("SRC_FLOORS_NUM")
-    private String srcFloorsNum;
-
-    /**
-     * 计费用省份(通过逻辑判断得出)
-     */
-    @FieldName(name = "计费用省份")
-    @Column(name = "cost_provinces")
-    @SerializedName("COST_PROVINCES")
-    private String costProvinces;
-
-    /**
-     * 计费用城市(通过逻辑判断得出)
-     */
-    @FieldName(name = "计费用城市")
-    @Column(name = "cost_city")
-    @SerializedName("COST_CITY")
-    private String costCity;
-
-    /**
-     * 计费用送货点编码(通过逻辑判断得出)
-     */
-    @FieldName(name = "计费用送货点编码")
-    @Column(name = "cost_point_code")
-    @SerializedName("COST_POINT_CODE")
-    private String costPointCode;
-
-    /**
-     * 计费用送货分点编码(通过逻辑判断得出)
-     */
-    @FieldName(name = "计费用送货分点编码")
-    @Column(name = "cost_child_point_code")
-    @SerializedName("COST_CHILD_POINT_CODE")
-    private String costChildPointCode;
-
-    /**
-     * 计费用上楼楼层(通过逻辑判断得出)
-     */
-    @FieldName(name = "计费用上楼楼层")
-    @Column(name = "cost_upstairs")
-    @SerializedName("COST_UPSTAIRS")
-    private String costUpstairs;
 
     /**
      * 总箱数(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -284,9 +175,9 @@ public class TransportBaseV extends IdEntity
      * 冷藏箱数(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
     @FieldName(name = "冷藏箱数")
-    @Column(name = "refrigerated_containers_num")
+    @Column(name = "refrigerated_box_num")
     @SerializedName("REFRIGERATED_CONTAINERS_NUM")
-    private Integer refrigeratedContainersNum;
+    private Integer refrigeratedBoxNum;
 
     /**
      * 温控品种件数(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -296,37 +187,6 @@ public class TransportBaseV extends IdEntity
     @SerializedName("TEMPERATURE_CONTROL_NUM")
     private Integer temperatureControlNum;
 
-    /**
-     * 二次分货标志(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "二次分货标志")
-    @Column(name = "secondary_distribution_flag")
-    @SerializedName("SECONDARY_DISTRIBUTION_FLAG")
-    private Boolean secondaryDistributionFlag;
-
-    /**
-     * 透析液标志(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "透析液标志")
-    @Column(name = "dialysate_markers")
-    @SerializedName("DIALYSATE_MARKERS")
-    private String dialysateMarkers;
-
-    /**
-     * 透析液自提标志(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "透析液自提标志")
-    @Column(name = "dialysate_flag")
-    @SerializedName("DIALYSATE_FLAG")
-    private Boolean dialysateFlag;
-
-    /**
-     * 委外配送服务线路补贴(在运费核算系统中进行手工维护，再通过地址ID关联得出)
-     */
-    @FieldName(name = "委外配送服务线路补贴")
-    @Column(name = "outsourcing_service_lines")
-    @SerializedName("OUTSOURCING_SERVICE_LINES")
-    private String outsourcingServiceLines;
 
     /**
      * 货到收款金额(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -460,9 +320,9 @@ public class TransportBaseV extends IdEntity
      * 货主(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
     @FieldName(name = "货主")
-    @Column(name = "shipper")
-    @SerializedName("SHIPPER")
-    private String shipper;
+    @Column(name = "consignor")
+    @SerializedName("CONSIGNOR")
+    private Long consignor;
 
     /**
      * 备注(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -526,7 +386,8 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "签收单状态")
     @Column(name = "receipt_status")
     @SerializedName("RECEIPT_STATUS")
-    private String receiptStatus;
+    @Enumerated(EnumType.ORDINAL)
+    private ReceiptStatus receiptStatus;
 
     /**
      * 签收单类型(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -534,15 +395,16 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "签收单类型")
     @Column(name = "receipt_type")
     @SerializedName("RECEIPT_TYPE")
-    private String receiptType;
+    @Enumerated(EnumType.ORDINAL)
+    private ReceiptType receiptType;
 
     /**
      * 笼车交接总单ID(取自WMS《笼车交接单管理》)
      */
     @FieldName(name = "笼车交接总单ID")
-    @Column(name = "cage_car_id")
-    @SerializedName("CAGE_CAR_ID")
-    private Long cageCarId;
+    @Column(name = "cage_car_ids")
+    @SerializedName("CAGE_CAR_IDS")
+    private String cageCarIds;
 
     /**
      * 干线线路(WMS《路线管理》中的“干线线路”字段)
@@ -622,7 +484,15 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "温度计回收计费标志")
     @Column(name = "thermometer_recovery_flag")
     @SerializedName("THERMOMETER_RECOVERY_FLAG")
-    private Boolean thermometerRecoveryChargingFlag;
+    private Boolean thermometerRecoveryFlag;
+
+    /**
+     * 温度计发运标志
+     */
+    @FieldName(name = "温度计发运标志")
+    @Column(name = "thermometer_delivery_flag")
+    @SerializedName("THERMOMETER_DELIVERY_FLAG")
+    private Boolean thermometerDeliveryFlag;
 
     /**
      * 泡沫箱回收数量(对于含有冷藏商品的签收单，统计显示该签收单发出的泡沫箱数量)
@@ -662,7 +532,8 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "运费结算支付标志")
     @Column(name = "freight_pay_flag")
     @SerializedName("FREIGHT_PAY_FLAG")
-    private Boolean freightPayMark;
+    @Enumerated(EnumType.ORDINAL)
+    private FreightPayStatus payStatus;
 
     /**
      * 预估运费(除租车配送模式和委外配送模式以外模式的分摊预估费用)
@@ -670,7 +541,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "预估运费")
     @Column(name = "estimated_freight")
     @SerializedName("ESTIMATED_FREIGHT")
-    private Boolean estimatedFreight;
+    private Double estimatedFreight;
 
     /**
      * 预估租车服务费(租车配送模式的分摊预估费用)
@@ -678,7 +549,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "预估租车服务费")
     @Column(name = "est_rental_service_fee")
     @SerializedName("EST_RENTAL_SERVICE_FEE")
-    private Boolean estimatedCarRentalServiceFee;
+    private Double estimatedCarRentalServiceFee;
 
     /**
      * 预估配送服务费(委外配送模式的分摊预估费用)
@@ -686,7 +557,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "预估配送服务费")
     @Column(name = "est_distribution_service_fee")
     @SerializedName("EST_DISTRIBUTION_SERVICE_FEE")
-    private Boolean estimatingDistributionServiceFee;
+    private Double estimatingDistributionServiceFee;
 
     /**
      * 预估合计运费(前三者合计)
@@ -694,7 +565,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "预估合计运费")
     @Column(name = "estimated_total_freight")
     @SerializedName("ESTIMATED_TOTAL_FREIGHT")
-    private Boolean estimatedTotalFreight;
+    private Double estimatedTotalFreight;
 
     /**
      * 应付运费(除租车配送模式和委外配送模式以外模式的分摊应付费用)
@@ -702,15 +573,15 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "应付运费")
     @Column(name = "freight_payable")
     @SerializedName("FREIGHT_PAYABLE")
-    private Boolean freightPayable;
+    private Double freightPayable;
 
     /**
      * 应付租车服务费(租车配送模式的分摊应付费用)
      */
     @FieldName(name = "应付租车服务费")
-    @Column(name = "payable_taxi_service_fee")
-    @SerializedName("PAYABLE_TAXI_SERVICE_FEE")
-    private Boolean payableTaxiServiceFee;
+    @Column(name = "pay_taxi_service_fee")
+    @SerializedName("PAY_TAXI_SERVICE_FEE")
+    private Double payableTaxiServiceFee;
 
     /**
      * 应付配送服务费(委外配送模式的分摊应付费用)
@@ -718,7 +589,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "应付配送服务费")
     @Column(name = "pay_distribution_service_fee")
     @SerializedName("PAY_DISTRIBUTION_SERVICE_FEE")
-    private Boolean payableDistributionServiceFee;
+    private Double payableDistributionServiceFee;
 
     /**
      * 应付合计运费(前三者合计)
@@ -726,7 +597,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "应付合计运费")
     @Column(name = "total_freight_payable")
     @SerializedName("TOTAL_FREIGHT_PAYABLE")
-    private Boolean totalFreightPayable;
+    private Double totalFreightPayable;
 
     /**
      * 运费付款单ID(回填除租车配送模式和委外配送模式以外模式的支付总单ID)
@@ -734,15 +605,15 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "运费付款单ID")
     @Column(name = "freight_bill_id")
     @SerializedName("FREIGHT_BILL_ID")
-    private Boolean freightBillId;
+    private Long freightBillId;
 
     /**
      * 运费支付日期(回填除租车配送模式和委外配送模式以外模式的支付日期)
      */
     @FieldName(name = "运费支付日期")
-    @Column(name = "date_of_freight_payment")
-    @SerializedName("DATE_OF_FREIGHT_PAYMENT")
-    private Boolean dateOfFreightPayment;
+    @Column(name = "freight_payment_date")
+    @SerializedName("FREIGHT_PAYMENT_DATE")
+    private Date freightPaymentDate;
 
     /**
      * 租车服务费付款单ID(回填租车配送模式的支付总单ID)
@@ -750,7 +621,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "租车服务费付款单ID")
     @Column(name = "rental_service_fee_payid")
     @SerializedName("RENTAL_SERVICE_FEE_PAYID")
-    private Boolean rentalServiceFeePaymentId;
+    private Long rentalServiceFeePaymentId;
 
     /**
      * 租车服务费支付日期(回填租车配送模式的支付日期)
@@ -758,7 +629,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "租车服务费支付日期")
     @Column(name = "pay_date_rental_service_fee")
     @SerializedName("PAY_DATE_RENTAL_SERVICE_FEE")
-    private Boolean paymentDateOfCarRentalServiceFee;
+    private Date paymentDateOfCarRentalServiceFee;
 
     /**
      * 配送服务费付款单ID(回填委外配送模式的支付总单ID)
@@ -766,7 +637,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "配送服务费付款单ID")
     @Column(name = "distri_service_fee_payid")
     @SerializedName("DISTRI_SERVICE_FEE_PAYID")
-    private Boolean distributionServiceFeePaymentId;
+    private Long distributionServiceFeePaymentId;
 
     /**
      * 配送服务费支付日期(回填委外配送模式的支付日期)
@@ -774,7 +645,7 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "配送服务费支付日期")
     @Column(name = "pay_date_distri_service_fee")
     @SerializedName("PAY_DATE_DISTRI_SERVICE_FEE")
-    private Boolean paymentDateOfDistributionServiceFee;
+    private Date paymentDateOfDistributionServiceFee;
 
     /**
      * 信息修改标志(任意信息被管理人员手动修改，则该字段显示“有”，否则显示“无”)
@@ -789,10 +660,6 @@ public class TransportBaseV extends IdEntity
     @SerializedName("IS_HANG_UP")
     private Boolean isHangUp;
 
-    @FieldName(name = "计费模式")
-    @Column(name = "cost_mode")
-    @SerializedName("COST_MODE")
-    private String costMode;
 
     @FieldName(name = "目的地客户服务类型")
     @Column(name = "destination_custom_type")
@@ -812,25 +679,25 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "实际商品重量")
     @Column(name = "real_weight")
     @SerializedName("REAL_WEIGHT")
-    private String realWeight;
+    private Double realWeight;
 
 
     @FieldName(name = "系统商品体积")
     @Column(name = "system_volume")
     @SerializedName("SYSTEM_VOLUME")
-    private String systemVolume;
+    private Double systemVolume;
 
 
     @FieldName(name = "实际商品体积")
     @Column(name = "real_volume")
     @SerializedName("REAL_VOLUME")
-    private String realVolume;
+    private Double realVolume;
 
 
     @FieldName(name = "收款确认标志")
-    @Column(name = "recconfirmflag ")
+    @Column(name = "recconfirmflag")
     @SerializedName("RECCONFIRMFLAG")
-    private String recconfirmFlag;
+    private Boolean recconfirmFlag;
 
     @FieldName(name = "租车服务商")
     @Column(name = "rental_servicer")
@@ -845,18 +712,111 @@ public class TransportBaseV extends IdEntity
     @FieldName(name = "泡沫箱发出数量")
     @Column(name = "foam_box_send_num")
     @SerializedName("FOAM_BOX_SEND_NUM")
-    private String foamBoxSendNum;
+    private Double foamBoxSendNum;
+
 
     /**
-     * 计费模式ID
+     * 送货地址详情
      */
-    @OneToOne(optional = false)
-    @JoinColumn(name = "mode_id")
-    private FreightMode freightMode;
+    @FieldName(name = "送货地址详情")
+    @Column(name = "address")
+    @SerializedName(value = "ADDRESS")
+    private String address;
+
+    /**
+     * 货主名
+     */
+    @FieldName(name = "货主名")
+    @Column(name = "consignor_name")
+    @SerializedName(value = "CONSIGNOR_NAME")
+    private String consignorName;
 
 
-    @Override
-    public Map<String, Object> getExpResultMap() {
-        return null;
-    }
+    /**
+     * 客户类型 0-医疗 1-商业 2-商业
+     */
+    @FieldName(name = "客户类型")
+    @Column(name = "customer_type")
+    @SerializedName(value = "CUSTOMTYPE")
+    @Enumerated(EnumType.ORDINAL)
+    private CustomType customerType;
+
+
+    /**
+     * 省份
+     */
+    @FieldName(name = "省份")
+    @Column(name = "PROVINCE")
+    private String province;
+
+
+    /**
+     * 城市
+     */
+    @FieldName(name = "城市")
+    @Column(name = "CITY")
+    private String city;
+
+
+    /**
+     * 送货点编码
+     */
+    @FieldName(name = "送货点编码")
+    @Column(name = "delivery_point")
+    private String deliveryPoint;
+
+
+    /**
+     * 送货分点编码
+     */
+    @FieldName(name = "送货分点编码")
+    @Column(name = "child_delivery_point")
+    @SerializedName(value = "CHILDDELIVERYPOINT")
+    private String childDeliveryPoint;
+
+
+    /**
+     * 二次分货标志
+     */
+    @FieldName(name = "二次分货标志")
+    @Column(name = "distributionflag")
+    private Boolean distributionFlag;
+
+
+    /**
+     * 透析液标志
+     */
+    @FieldName(name = "透析液标志")
+    @Column(name = "dialysateflag")
+    private Boolean dialySateFlag;
+
+
+    /**
+     * 透析液自提标志
+     */
+    @FieldName(name = "透析液自提标志")
+    @Column(name = "dialysateselfpickflag")
+    private Boolean dialySateSelfPickFlag;
+
+
+    /**
+     * 上楼楼层
+     */
+    @Column(name = "upstairs")
+    private Integer upstairs;
+
+
+    /**
+     * 委外配送服务线路补贴
+     */
+    @Column(name = "outsourcing_subsidy")
+    private Double outsourcingSubsidy;
+
+    /**
+     * 特殊计费模式ID
+     */
+    @Transient
+    private Long specialId;
+
+
 }

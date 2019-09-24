@@ -7,12 +7,12 @@ public enum FreightExpType {
     /**
      * 细单 序号0
      */
-    DOC,
+    DTL,
 
     /**
      * 总单 序号1
      */
-    DTL;
+    DOC;
 
 
     /**
