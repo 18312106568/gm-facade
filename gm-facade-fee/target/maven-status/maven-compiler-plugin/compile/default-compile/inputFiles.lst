@@ -20,6 +20,7 @@ E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\ReceiptS
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportBase.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\FreightStatistic.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportBaseV.java
+E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportBaseFeeMapping.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\base\IdEntity.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FreightPayStatus.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\FreightBackfillService.java
@@ -29,8 +30,10 @@ E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FreightC
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FreightExpSourceType.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\FreightGroupService.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\FreightModeService.java
+E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\SpecialVehicleType.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\FeeService.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FieldDomainType.java
+E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\FreightGroupDj.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\fee\OutDeliveryDocFee.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\fee\ExpressDocFee.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\base\BackFillable.java

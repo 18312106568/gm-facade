@@ -57,5 +57,6 @@ public interface FreightGroupService {
      * @param groupConfigs
      * @return
      */
-    String fetchGroupKey(Freight freight, List<FreightConfigGroup> groupConfigs);
+    String fetchGroupKey(Freight freight
+            , List<FreightConfigGroup> groupConfigs,FreightMode freightMode);
 }

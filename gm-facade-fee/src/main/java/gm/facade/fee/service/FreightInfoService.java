@@ -1,5 +1,6 @@
 package gm.facade.fee.service;
 
+import gm.facade.fee.constant.CalculateType;
 import gm.facade.fee.constant.FreightExpType;
 import gm.facade.fee.entity.FreightMode;
 import gm.facade.fee.entity.base.Freight;
@@ -33,23 +34,32 @@ public interface FreightInfoService {
      * 根据计费单批次号作废计费单
      * @param freightMode
      * @param freightExpType
+     * @param calculateType
      * @param operatorId
      * @param batchNo
      * @return
      */
-    Integer disableFreight(FreightMode freightMode
-            ,FreightExpType freightExpType,Long operatorId,Long batchNo);
+    Integer disableFreight(FreightMode freightMode, FreightExpType freightExpType
+            , CalculateType calculateType, Long operatorId, Long batchNo);
 
     /**
      * 批量作废
      * @param freightMode
      * @param expType
+     * @param calculateType
      * @param operatorId
      * @param batchNoList
      * @return
      */
-    Integer batchDisableFreight(FreightMode freightMode
-            ,FreightExpType expType,Long operatorId,List<Long> batchNoList);
+    Integer batchDisableFreight(FreightMode freightMode,FreightExpType expType
+            ,CalculateType calculateType,Long operatorId,List<Long> batchNoList);
 
 
+    /**
+     * 获取细单信息
+     * @param freightMode
+     * @param docId
+     * @return
+     */
+    List<Freight> getFreightDtlInfo(FreightMode freightMode,Long docId);
 }

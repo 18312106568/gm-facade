@@ -25,6 +25,16 @@ public interface FeeService {
     List<Long> computeFee(Date transportDate, Long operatorId, CalculateType calculateType);
 
     /**
+     * 根据运输日期以及物流模式计费
+     * @param transportDate
+     * @param operatorId
+     * @param logisticMode
+     * @param calculateType
+     * @return
+     */
+    List<Long> computeFee(Date transportDate,Long operatorId,Long logisticMode,CalculateType calculateType);
+
+    /**
      * 按时间维度计算签收单
      * @param startDate
      * @param endDate
@@ -33,4 +43,12 @@ public interface FeeService {
      * @return
      */
     List<Long> computeFee(Date startDate,Date endDate, Long operatorId, CalculateType calculateType);
+
+    /**
+     * 生成实付单
+     * @param docId
+     * @param modeId
+     * @return
+     */
+    List<Long> computePayment(Long docId,Long modeId,Long operatorId);
 }

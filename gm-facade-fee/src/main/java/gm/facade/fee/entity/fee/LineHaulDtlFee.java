@@ -1,6 +1,7 @@
 package gm.facade.fee.entity.fee;
 
 import gm.common.base.annotation.FieldName;
+import gm.facade.fee.constant.SpecialVehicleType;
 import gm.facade.fee.entity.base.FreightDtl;
 import lombok.Data;
 
@@ -57,7 +58,7 @@ public class LineHaulDtlFee extends FreightDtl {
      */
     @FieldName(name = "干线车型")
     @Column( name = "trunk_model")
-    private String trunkModel;
+    private SpecialVehicleType trunkModel;
 
     /**
      * 起运仓库

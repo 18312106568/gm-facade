@@ -2,10 +2,7 @@ package gm.facade.fee.entity.wms;
 
 import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
-import gm.facade.fee.constant.CustomType;
-import gm.facade.fee.constant.FreightPayStatus;
-import gm.facade.fee.constant.ReceiptStatus;
-import gm.facade.fee.constant.ReceiptType;
+import gm.facade.fee.constant.*;
 import gm.facade.fee.entity.base.*;
 import lombok.Data;
 
@@ -14,7 +11,7 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "jf_transport_base_v",catalog = "签收单视图")
+@Table(name = "jf_transport_base_v2",catalog = "签收单视图")
 @Data
 public class TransportBaseV extends Freight {
 
@@ -218,7 +215,8 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "专车车型1")
     @Column(name = "special_vehicle_model1")
     @SerializedName("SPECIAL_VEHICLE_MODEL1")
-    private String specialVehicleModel1;
+    @Enumerated(EnumType.ORDINAL)
+    private SpecialVehicleType specialVehicleModel1;
 
     /**
      * 专车车次1(须在WMS中增加功能进行手工维护)
@@ -250,7 +248,8 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "专车车型2")
     @Column(name = "special_vehicle_type2")
     @SerializedName("SPECIAL_VEHICLE_TYPE2")
-    private String specialVehicleType2;
+    @Enumerated(EnumType.ORDINAL)
+    private SpecialVehicleType specialVehicleType2;
 
     /**
      * 专车车次2(须在WMS中增加功能进行手工维护)
@@ -282,7 +281,8 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "专车车型3")
     @Column(name = "special_vehicle_type3")
     @SerializedName("SPECIAL_VEHICLE_TYPE3")
-    private String specialVehicleType3;
+    @Enumerated(EnumType.ORDINAL)
+    private SpecialVehicleType specialVehicleType3;
 
     /**
      * 专车车次3(须在WMS中增加功能进行手工维护)
@@ -802,6 +802,7 @@ public class TransportBaseV extends Freight {
     /**
      * 上楼楼层
      */
+    @FieldName(name = "上楼楼层")
     @Column(name = "upstairs")
     private Integer upstairs;
 

@@ -13,6 +13,7 @@ gm\facade\fee\entity\base\BackFillable.class
 gm\facade\fee\entity\wms\TransportSettle.class
 gm\facade\fee\entity\wms\TransportBase.class
 gm\facade\fee\entity\fee\SpecialVehicleFee.class
+gm\facade\fee\entity\wms\TransportBaseFeeMapping.class
 gm\facade\fee\service\FeeService.class
 gm\facade\fee\entity\fee\PointPartsDeliveryDtlFee.class
 gm\facade\fee\entity\fee\CarRentalDtlFee.class
@@ -21,6 +22,7 @@ gm\facade\fee\service\TransportBaseService.class
 gm\facade\fee\entity\wms\TransportBaseV.class
 gm\facade\fee\constant\StatisticType.class
 gm\facade\fee\service\FreightGroupService.class
+gm\facade\fee\entity\wms\TransportBaseFeeMapping$Identity.class
 gm\facade\fee\entity\FreightStatistic.class
 gm\facade\fee\constant\FreightExpSourceType.class
 gm\facade\fee\service\FreightBackfillService.class
@@ -50,12 +52,14 @@ gm\facade\fee\entity\base\FreightDoc.class
 gm\facade\fee\service\FreightFieldService.class
 gm\facade\fee\entity\FreightExp.class
 gm\facade\fee\constant\FreightExpType.class
+gm\facade\fee\entity\FreightGroupDj.class
 gm\facade\fee\entity\base\DtlEntity.class
 gm\facade\fee\entity\FreightBackfillConfig.class
 gm\facade\fee\entity\base\BaseEntity.class
 gm\facade\fee\entity\base\Freight.class
 gm\facade\fee\entity\fee\PointPartsDeliveryDocFee.class
 gm\facade\fee\constant\FieldType.class
+gm\facade\fee\constant\SpecialVehicleType.class
 gm\facade\fee\entity\base\IdEntity.class
 gm\facade\fee\constant\CalculateType.class
 gm\facade\fee\entity\fee\CarRentalDocFee.class

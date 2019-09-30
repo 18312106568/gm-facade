@@ -89,4 +89,5 @@ public class FreightDoc extends Freight {
     @FieldName(name = "运费支付日期")
     @Column( name = "freight_payment_date")
     private Date freightPaymentDate;
+
 }

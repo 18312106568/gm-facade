@@ -33,7 +33,14 @@ public class TransportAddress implements Serializable {
      */
     @Column(name = "customer_code")
     @SerializedName(value = "CUSTOMER_CODE")
-    private String customCode;
+    private String customerCode;
+
+    /**
+     * 客户名称
+     */
+    @Column(name = "customer_name")
+    @SerializedName(value = "CUSTOMER_NAME")
+    private String customerName;
 
     /**
      * 货主ID

@@ -29,4 +29,11 @@ public interface FreightModeService {
      */
     Class<Freight> getModeClass(FreightMode freightMode
             , FreightExpType freightExpType);
+
+    /**
+     * 获取计费模式
+     * @param modeId
+     * @return
+     */
+    FreightMode getFreightMode(Long modeId);
 }

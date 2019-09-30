@@ -25,6 +25,4 @@ public class FreightDtl extends Freight {
     @FieldName(name = "总单ID")
     private Long docId;
 
-
-
 }

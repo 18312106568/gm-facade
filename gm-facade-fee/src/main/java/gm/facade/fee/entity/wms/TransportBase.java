@@ -473,10 +473,11 @@ public class TransportBase extends Freight
     @SerializedName("CONSIGNOR")
     private Long consignor;
 
-    /**
-     * 货主名
-     */
-    @Column(name = "consignor_name")
+//    /**
+//     * 货主名
+//     */
+    //@Column(name = "consignor_name")
+    @Transient
     @SerializedName(value = "CONSIGNOR_NAME")
     private String consignorName;
 

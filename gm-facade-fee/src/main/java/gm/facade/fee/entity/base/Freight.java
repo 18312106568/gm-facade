@@ -3,7 +3,10 @@ package gm.facade.fee.entity.base;
 import gm.common.base.annotation.FieldName;
 import gm.facade.fee.constant.CalculateType;
 import gm.facade.fee.constant.FeeStatus;
+import gm.facade.fee.entity.wms.TransportBaseFeeMapping;
 import lombok.Data;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -11,11 +14,13 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @MappedSuperclass
+@ComponentScans(@ComponentScan( value = {"gm.common.base.aop"}))
 @EntityListeners(AuditingEntityListener.class)
-public class Freight implements Serializable {
+public abstract class Freight implements Serializable {
 
     /**
      * 计费单批号
@@ -74,9 +79,12 @@ public class Freight implements Serializable {
     /**
      * 签收单ids
      */
-    @Column(name = "base_ids")
-    @FieldName(name = "签收单ids")
-    private String transportBaseIds;
+//    @Column(name = "base_ids")
+//    @FieldName(name = "签收单ids")
+//    @Transient
+//    private String transportBaseIds;
+    @Transient
+    private List<TransportBaseFeeMapping> baseFeeMappings;
 
     /**
      * 特殊分组ID
