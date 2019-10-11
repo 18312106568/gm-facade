@@ -213,10 +213,10 @@ public class TransportBaseV extends Freight {
      * 专车车型1(须在WMS中增加功能进行手工维护)
      */
     @FieldName(name = "专车车型1")
-    @Column(name = "special_vehicle_model1")
+    @Column(name = "special_vehicle_type1")
     @SerializedName("SPECIAL_VEHICLE_MODEL1")
     @Enumerated(EnumType.ORDINAL)
-    private SpecialVehicleType specialVehicleModel1;
+    private SpecialVehicleType specialVehicleType1;
 
     /**
      * 专车车次1(须在WMS中增加功能进行手工维护)

@@ -71,4 +71,12 @@ public interface TransportBaseService {
      * @return
      */
     List<TransportBaseV> findTransportBaseV(List<Long> mappingIds);
+
+
+    /**
+     * 获取签收单
+     * @param identity
+     * @return
+     */
+    TransportBase getTransportBase(TransportBase.Identity identity);
 }

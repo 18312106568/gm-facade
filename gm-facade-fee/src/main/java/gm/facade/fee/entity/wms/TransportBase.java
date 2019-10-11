@@ -365,9 +365,9 @@ public class TransportBase extends Freight
      * 专车车型1(须在WMS中增加功能进行手工维护)
      */
     @FieldName(name = "专车车型1")
-    @Column(name = "special_vehicle_model1")
+    @Column(name = "special_vehicle_type1")
     @SerializedName("SPECIAL_VEHICLE_MODEL1")
-    private String specialVehicleModel1;
+    private String specialVehicleType1;
 
     /**
      * 专车车次1(须在WMS中增加功能进行手工维护)
@@ -811,6 +811,14 @@ public class TransportBase extends Freight
     @Column(name = "information_modification_mark")
     @SerializedName("INFORMATION_MODIFICATION_MARK")
     private Boolean informationModificationMark;
+
+
+    /**
+     * 锁定标志
+     */
+    @FieldName(name = "锁定标志")
+    @Column(name = "LOCKFLAG")
+    private Boolean lockFlag;
 
     @FieldName(name = "签收单挂起状态")
     @Column(name = "is_hang_up")
