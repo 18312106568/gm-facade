@@ -257,7 +257,7 @@ public class OutDeliveryDocFee extends FreightDoc {
      */
     @FieldName(name = "加班时长")
     @Column( name = "overtime_hours")
-    private String overtimeHours;
+    private Double overtimeHours;
 
     /**
      * 加班费
@@ -271,7 +271,7 @@ public class OutDeliveryDocFee extends FreightDoc {
      */
     @FieldName(name = "干线收货服务时长")
     @Column( name = "trunk_line_receive_duration")
-    private String trunkLineReceiveDuration;
+    private Double trunkLineReceiveDuration;
 
     /**
      * 干线收货服务费

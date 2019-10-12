@@ -114,21 +114,21 @@ public class CarRentalDtlFee extends FreightDtl {
      */
     @FieldName(name = "工作日加班时长")
     @Column( name = "weekday_overtime_hours")
-    private String weekdayOvertimeHours;
+    private Double weekdayOvertimeHours;
 
     /**
      * 休息日加班时长
      */
     @FieldName(name = "休息日加班时长")
     @Column( name = "rest_overtime_hours")
-    private String restOvertimeHours;
+    private Double restOvertimeHours;
 
     /**
      * 节假日加班时长
      */
     @FieldName(name = "节假日加班时长")
     @Column( name = "holiday_overtime_hours")
-    private String holidayOvertimeHours;
+    private Double holidayOvertimeHours;
 
     /**
      * 起始里程（KM）
