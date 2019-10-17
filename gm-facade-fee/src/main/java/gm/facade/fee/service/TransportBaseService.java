@@ -13,12 +13,6 @@ import java.util.Map;
  */
 public interface TransportBaseService {
 
-    /**
-     * 挂起符合条件的签收单
-     * @param transportBase
-     * @return
-     */
-    void hangUpTransportBase(TransportBase transportBase);
 
 
     /**
@@ -79,4 +73,6 @@ public interface TransportBaseService {
      * @return
      */
     TransportBase getTransportBase(TransportBase.Identity identity);
+
+
 }

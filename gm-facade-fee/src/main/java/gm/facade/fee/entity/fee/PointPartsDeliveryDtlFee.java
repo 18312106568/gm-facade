@@ -26,13 +26,6 @@ public class PointPartsDeliveryDtlFee extends FreightDtl {
     private String carrier;
 
     /**
-     * 运输日期
-     */
-    @FieldName(name = "运输日期")
-    @Column( name = "transport_date")
-    private Date transportDate;
-
-    /**
      * 出车时段
      */
     @FieldName(name = "出车时段")

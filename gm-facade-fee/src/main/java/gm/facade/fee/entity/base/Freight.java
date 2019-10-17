@@ -1,5 +1,6 @@
 package gm.facade.fee.entity.base;
 
+import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
 import gm.facade.fee.constant.CalculateType;
 import gm.facade.fee.constant.FeeStatus;
@@ -75,6 +76,14 @@ public abstract class Freight implements Serializable {
     @Column(name = "update_by")
     @FieldName(name = "更改人ID")
     private Long updateBy;
+
+
+    /**
+     * 运输日期(取自WMS《签收单查询》/《签收单重派记录查询》)
+     */
+    @FieldName(name = "运输日期")
+    @Column(name = "transport_date")
+    private Date transportDate;
 
     /**
      * 签收单ids

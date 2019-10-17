@@ -23,12 +23,6 @@ public class SpecialVehicleFee extends FreightDoc {
     @Column( name = "carrier")
     private String carrier;
 
-    /**
-     * 运输日期
-     */
-    @FieldName(name = "运输日期")
-    @Column( name = "transport_date")
-    private Date transportDate;
 
     /**
      * 专车编号

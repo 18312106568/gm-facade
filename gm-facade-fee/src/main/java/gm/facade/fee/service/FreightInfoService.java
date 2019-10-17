@@ -62,4 +62,12 @@ public interface FreightInfoService {
      * @return
      */
     List<Freight> getFreightDtlInfo(FreightMode freightMode,Long docId);
+
+    /**
+     * 细单手工录入更新
+     * @param freight
+     * @param freightMode
+     * @return
+     */
+    Freight dtlManualUpdate(Freight freight,FreightMode freightMode);
 }

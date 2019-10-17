@@ -17,12 +17,7 @@ import java.util.Date;
 @Entity
 @Table(name = "jf_fee_express_dtl",catalog = "快递计费细单")
 public class ExpressDtlFee extends FreightDtl {
-    /**
-     * 运输日期
-     */
-    @FieldName(name = "运输日期")
-    @Column( name = "transport_date")
-    private Date transportDate;
+
 
     /**
      * 出车时段

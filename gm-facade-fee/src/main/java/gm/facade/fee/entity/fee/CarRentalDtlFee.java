@@ -25,12 +25,7 @@ public class CarRentalDtlFee extends FreightDtl {
     @Column( name = "warehouse")
     private String warehouse;
 
-    /**
-     * 运输日期
-     */
-    @FieldName(name = "运输日期")
-    @Column( name = "transport_date")
-    private Date transportDate;
+
 
     /**
      * 车牌号码

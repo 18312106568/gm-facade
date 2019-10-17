@@ -31,12 +31,6 @@ public class OutDeliveryDocFee extends FreightDoc {
     @Column( name = "delivery_servicer")
     private String deliveryServicer;
 
-    /**
-     * 运输日期
-     */
-    @FieldName(name = "运输日期")
-    @Column( name = "transport_date")
-    private Date transportDate;
 
     /**
      * 出车时段

@@ -24,8 +24,10 @@ gm\facade\fee\constant\StatisticType.class
 gm\facade\fee\service\FreightGroupService.class
 gm\facade\fee\entity\wms\TransportBaseFeeMapping$Identity.class
 gm\facade\fee\entity\FreightStatistic.class
+gm\facade\fee\entity\fee\CarRentalManual.class
 gm\facade\fee\constant\FreightExpSourceType.class
 gm\facade\fee\service\FreightBackfillService.class
+gm\facade\fee\service\TransportBaseHangUpService.class
 gm\facade\fee\constant\FreightConfigType.class
 gm\facade\fee\entity\FreightConfig.class
 gm\facade\fee\entity\FreightField.class

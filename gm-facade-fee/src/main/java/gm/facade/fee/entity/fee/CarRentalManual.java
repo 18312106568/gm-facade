@@ -1,5 +1,6 @@
 package gm.facade.fee.entity.fee;
 
+import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
 import gm.facade.fee.entity.base.FreightDtl;
 import lombok.Data;
@@ -22,18 +23,19 @@ public class CarRentalManual implements Serializable {
     private Long id;
 
     /**
+     * 运输日期
+     */
+    @FieldName(name = "运输日期")
+    @Column(name = "transport_date")
+    private Date transportDate;
+
+    /**
      * 仓库
      */
     @FieldName(name = "仓库")
     @Column( name = "warehouse")
     private String warehouse;
 
-    /**
-     * 运输日期
-     */
-    @FieldName(name = "运输日期")
-    @Column( name = "transport_date")
-    private Date transportDate;
 
     /**
      * 车牌号码
@@ -105,13 +107,6 @@ public class CarRentalManual implements Serializable {
     @FieldName(name = "结束里程（KM）")
     @Column( name = "end_mile")
     private Double endMile;
-
-    /**
-     * 行驶里程（KM）
-     */
-    @FieldName(name = "行驶里程（KM）")
-    @Column( name = "driving_mile")
-    private Double drivingMile;
 
     /**
      * 附加费用

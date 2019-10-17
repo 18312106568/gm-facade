@@ -19,5 +19,13 @@ public enum CustomType {
      * 药店
      */
     @SerializedName("2")
-    DRUGSTORE
+    DRUGSTORE,
+
+    /**
+     * 全类型
+     */
+    @SerializedName("3")
+    ALL
+
+
 }

@@ -16,12 +16,7 @@ import java.util.Date;
 @Entity
 @Table(name = "jf_fee_piece_delivery",catalog = "件配送总细单")
 public class PieceDeliveryFee extends FreightDoc {
-    /**
-     * 运输日期
-     */
-    @FieldName(name = "运输日期")
-    @Column( name = "transport_date")
-    private Date transportDate;
+
 
     /**
      * 出车时段

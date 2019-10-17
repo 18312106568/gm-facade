@@ -35,13 +35,6 @@ public class TransportBaseV extends Freight {
     @SerializedName("RECEIPT_ID")
     private Long receiptId;
 
-    /**
-     * 运输日期(取自WMS《签收单查询》/《签收单重派记录查询》)
-     */
-    @FieldName(name = "运输日期")
-    @Column(name = "transport_date")
-    @SerializedName("TRANSPORT_DATE")
-    private Date transportDate;
 
     /**
      * 出车时段(通过WMS《签收单查询》的出车时段映射关联出来)
@@ -661,15 +654,15 @@ public class TransportBaseV extends Freight {
     private Boolean isHangUp;
 
 
-    @FieldName(name = "目的地客户服务类型")
-    @Column(name = "destination_custom_type")
-    @SerializedName("DESTINATION_CUSTOM_TYPE")
-    private String destinationCustomType;
-
-    @FieldName(name = "起运地客户服务类型")
-    @Column(name = "src_custom_type")
-    @SerializedName("SRC_CUSTOM_TYPE")
-    private String srcCustomType;
+//    @FieldName(name = "目的地客户服务类型")
+//    @Column(name = "destination_custom_type")
+//    @SerializedName("DESTINATION_CUSTOM_TYPE")
+//    private String destinationCustomType;
+//
+//    @FieldName(name = "起运地客户服务类型")
+//    @Column(name = "src_custom_type")
+//    @SerializedName("SRC_CUSTOM_TYPE")
+//    private String srcCustomType;
 
     @FieldName(name = "计费用客户服务类型")
     @Column(name = "cost_custom_type")

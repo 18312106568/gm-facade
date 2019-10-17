@@ -30,6 +30,7 @@ public class TransportBase extends Freight
     @Column(name = "id")
     private Long seqId;
 
+
     /**
      * 运输日期(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
@@ -37,6 +38,7 @@ public class TransportBase extends Freight
     @Column(name = "transport_date")
     @SerializedName("TRANSPORT_DATE")
     private Date transportDate;
+
 
     /**
      * 出车时段(通过WMS《签收单查询》的出车时段映射关联出来)
@@ -533,7 +535,7 @@ public class TransportBase extends Freight
      * 手机送货人(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
     @FieldName(name = "手机送货人")
-    @Column(name = "deliverer_mobile")
+    @Column(name = "")
     @SerializedName("DELIVERER_MOBILE")
     private String delivererMobile;
 
@@ -825,15 +827,15 @@ public class TransportBase extends Freight
     @SerializedName("IS_HANG_UP")
     private Boolean isHangUp;
 
-    @FieldName(name = "目的地客户服务类型")
+   /* @FieldName(name = "目的地客户服务类型")
     @Column(name = "destination_custom_type")
     @SerializedName("DESTINATION_CUSTOM_TYPE")
-    private String destinationCustomType;
+    private String destinationCustomType;*/
 
-    @FieldName(name = "起运地客户服务类型")
+/*    @FieldName(name = "起运地客户服务类型")
     @Column(name = "src_custom_type")
     @SerializedName("SRC_CUSTOM_TYPE")
-    private String srcCustomType;
+    private String srcCustomType;*/
 
     @FieldName(name = "计费用客户服务类型")
     @Column(name = "cost_custom_type")
