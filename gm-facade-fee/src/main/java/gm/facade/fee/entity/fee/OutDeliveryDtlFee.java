@@ -2,12 +2,14 @@ package gm.facade.fee.entity.fee;
 
 import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
+import gm.facade.fee.constant.WorkingFlagType;
 import gm.facade.fee.entity.base.FreightDtl;
 import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -180,10 +182,18 @@ public class OutDeliveryDtlFee extends FreightDtl {
     private Boolean secondaryDistributionMarking;
 
     /**
+     * 二次分货点数
+     */
+    @FieldName(name = "二次分货点数")
+    @Column( name = "second_distribution_point_num")
+    private Integer secondDistributionPointNum;
+
+    /**
      * 二次分货服务费
      */
     @FieldName(name = "二次分货服务费")
-    @Column( name = "second_distribution_fee")
+    //@Column( name = "second_distribution_fee")
+    @Transient
     private Double secondDistributionFee;
 
     /**
@@ -192,6 +202,14 @@ public class OutDeliveryDtlFee extends FreightDtl {
     @FieldName(name = "货到收款服务计费标志")
     @Column( name = "charging_flag")
     private Boolean chargingFlag;
+
+    /**
+     * 货到收款服务点数
+     */
+    @FieldName(name = "货到收款服务点数")
+    //@Column( name = "delivery_service_point_num")
+    @Transient
+    private Integer deliveryServicePointNum;
 
     /**
      * 收款服务费
@@ -205,7 +223,7 @@ public class OutDeliveryDtlFee extends FreightDtl {
      */
     @FieldName(name = "泡沫箱发出数量")
     @Column( name = "foam_box_send_num")
-    private Double foamBoxSendNum;
+    private Integer foamBoxSendNum;
 
     /**
      * 泡沫箱回收数量
@@ -224,12 +242,36 @@ public class OutDeliveryDtlFee extends FreightDtl {
     @FieldName(name = "委外配送服务线路补贴")
     @Column(name = "outsourcing_subsidy")
     @SerializedName("OUTSOURCING_SUBSIDY")
-    private String outsourcingSubsidy;
+    private Double outsourcingSubsidy;
 
     /**
-     * 非正常工作时段标识
+     * 非常规工作时段标志(该字段默认值为“无”，可选择“工作日/休息日/节假日”)
      */
-    @FieldName(name = "非正常工作时段标识")
-    @Column( name = "abnormal_working_flag")
-    private Boolean abnormalWorkingFlag;
+    @FieldName(name = "非常规工作时段标志")
+    @Column(name = "unconventional_working_flag")
+    @SerializedName("UNCONVENTIONAL_WORKING_FLAG")
+    private WorkingFlagType unconventionalWorkingFlag;
+
+
+
+    /**
+     * 加班时长
+     */
+    @FieldName(name = "加班时长")
+    @Transient
+    private Double overtimeHours;
+
+    /**
+     * 干线收货服务时长
+     */
+    @FieldName(name = "干线收货服务时长")
+    @Transient
+    private Double trunkLineReceiveDuration;
+
+    /**
+     * 当日同车配送次数
+     */
+    @Transient
+    @FieldName(name = "当日同车配送次数")
+    private Integer branchDepartureNum;
 }

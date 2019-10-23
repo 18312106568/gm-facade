@@ -509,7 +509,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "非常规工作时段标志")
     @Column(name = "unconventional_working_flag")
     @SerializedName("UNCONVENTIONAL_WORKING_FLAG")
-    private String unconventionalWorkingFlag;
+    private WorkingFlagType unconventionalWorkingFlag;
 
     /**
      * 取消订单标志(负数签收单的该字段默认值为“是”。其它签收单默认为“否”)
@@ -705,7 +705,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "泡沫箱发出数量")
     @Column(name = "foam_box_send_num")
     @SerializedName("FOAM_BOX_SEND_NUM")
-    private Double foamBoxSendNum;
+    private Integer foamBoxSendNum;
 
 
     /**
@@ -807,10 +807,79 @@ public class TransportBaseV extends Freight {
     private Double outsourcingSubsidy;
 
     /**
+     * 加班时长
+     */
+    @FieldName(name = "加班时长")
+    @Column( name = "overtime_hours")
+    private Double overtimeHours;
+
+    /**
+     * 干线收货服务时长
+     */
+    @FieldName(name = "干线收货服务时长")
+    @Column( name = "trunk_line_receive_hours")
+    private Double trunkLineReceiveDuration;
+
+    /**
      * 特殊计费模式ID
      */
     @Transient
     private Long specialId;
 
+    /**
+     * 当日同车配送次数
+     */
+    @Transient
+    @FieldName(name = "当日同车配送次数")
+    private Integer branchDepartureNum;
+
+    /**
+     * 点件计费模式客户服务类型
+     */
+    @Transient
+    @FieldName(name = "点件客户类型")
+    private CustomType djCustomType;
+
+    /**
+     * 二次分货点数
+     */
+    @FieldName(name = "二次分货点数")
+    @Transient
+    private Integer secondDistributionPointNum;
+
+    /**
+     * 温度计发运票数
+     */
+    @FieldName(name = "温度计发运票数")
+    @Transient
+    private Integer thermometerInvoiceNum;
+
+    /**
+     * 温度计回收票数
+     */
+    @FieldName(name = "温度计回收票数")
+    @Transient
+    private Integer thermometerRecoveryNum;
+
+    /**
+     * 货到收款服务点数
+     */
+    @FieldName(name = "货到收款服务点数")
+    @Transient
+    private Integer deliveryServicePointNum;
+
+    /**
+     * 医疗上架件数
+     */
+    @FieldName(name = "医疗上架件数")
+    @Transient
+    private Integer medicalShelvesNum;
+
+    /**
+     * 计费用医疗上架件数
+     */
+    @FieldName(name = "计费用医疗上架件数")
+    @Transient
+    private Integer costMedicalShelvesNum;
 
 }

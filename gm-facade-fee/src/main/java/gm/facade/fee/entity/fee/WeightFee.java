@@ -135,7 +135,7 @@ public class WeightFee  extends FreightDoc {
      */
     @FieldName(name = "系统商品重量")
     @Column( name = "system_commodity_weight")
-    private String systemCommodityWeight;
+    private Double systemCommodityWeight;
 
     /**
      * 实际商品重量

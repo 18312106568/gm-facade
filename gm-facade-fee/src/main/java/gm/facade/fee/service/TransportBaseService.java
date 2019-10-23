@@ -1,5 +1,7 @@
 package gm.facade.fee.service;
 
+import gm.facade.fee.constant.CustomType;
+import gm.facade.fee.entity.FreightGroupDj;
 import gm.facade.fee.entity.wms.TransportAddress;
 import gm.facade.fee.entity.wms.TransportBase;
 import gm.facade.fee.entity.wms.TransportBaseV;
@@ -73,6 +75,25 @@ public interface TransportBaseService {
      * @return
      */
     TransportBase getTransportBase(TransportBase.Identity identity);
+
+    /**
+     * 添加计费额外数据
+     * @param transportBaseVList
+     * @return
+     */
+    List<TransportBaseV> additionalData(List<TransportBaseV> transportBaseVList);
+
+    /**
+     * 设置点件计费模式客户类型
+     */
+    void setDjGroupCache(FreightGroupDj freightGroupDj);
+
+    /**
+     * 获取点件计费模式客户类型
+     * @param transportBaseV
+     * @return
+     */
+    CustomType getDjGroupCache(TransportBaseV transportBaseV);
 
 
 }

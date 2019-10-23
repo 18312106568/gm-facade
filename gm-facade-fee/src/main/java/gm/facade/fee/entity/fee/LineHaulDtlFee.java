@@ -8,6 +8,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -74,6 +75,13 @@ public class LineHaulDtlFee extends FreightDtl {
     @FieldName(name = "经停仓库")
     @Column( name = "stopped_warehouse")
     private String stoppedWarehouse;
+
+    /**
+     * 车型费用
+     */
+    @Transient
+    @FieldName(name = "车型费用")
+    private Double vehicleFee;
 }
 
 

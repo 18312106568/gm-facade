@@ -8,6 +8,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -96,5 +97,10 @@ public class LineHaulDocFee extends FreightDoc {
     private Double stoppedWarehouseCharges;
 
 
-
+    /**
+     * 车型费用
+     */
+    @Transient
+    @FieldName(name = "车型费用")
+    private Double vehicleFee;
 }

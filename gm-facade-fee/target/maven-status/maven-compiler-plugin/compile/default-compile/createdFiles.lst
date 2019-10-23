@@ -52,6 +52,7 @@ gm\facade\fee\constant\CustomType.class
 gm\facade\fee\constant\FreightPayStatus.class
 gm\facade\fee\entity\base\FreightDoc.class
 gm\facade\fee\service\FreightFieldService.class
+gm\facade\fee\constant\WorkingFlagType.class
 gm\facade\fee\entity\FreightExp.class
 gm\facade\fee\constant\FreightExpType.class
 gm\facade\fee\entity\FreightGroupDj.class

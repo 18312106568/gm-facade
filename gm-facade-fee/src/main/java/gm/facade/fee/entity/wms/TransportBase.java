@@ -878,7 +878,7 @@ public class TransportBase extends Freight
     @FieldName(name = "泡沫箱发出数量")
     @Column(name = "foam_box_send_num")
     @SerializedName("FOAM_BOX_SEND_NUM")
-    private Double foamBoxSendNum;
+    private Integer foamBoxSendNum;
 
 //    /**
 //     * 计费模式ID

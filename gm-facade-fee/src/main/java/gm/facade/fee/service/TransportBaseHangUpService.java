@@ -9,4 +9,11 @@ public interface TransportBaseHangUpService {
      * @param transportBase
      */
     void hangUpTransportBase(TransportBase transportBase);
+
+    /**
+     * 校验签收单是否挂起
+     * @param loadingListId
+     * @param receiptId
+     */
+    void hangUpTransportBase(Long loadingListId,Long receiptId);
 }

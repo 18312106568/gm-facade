@@ -7,13 +7,18 @@ public enum SpecialVehicleType {
     /**
      * 普通专车
      */
+    //0
     NORMAL4_3,
 
+    //1
     NORMAL7_6,
 
+    //2
     NORMAL9_6,
 
     NORMAL12_6,
+
+    NORMAL16_5,
 
     /**
      * 冷藏专车

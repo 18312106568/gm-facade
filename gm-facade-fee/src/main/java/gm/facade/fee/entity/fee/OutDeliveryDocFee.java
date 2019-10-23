@@ -1,6 +1,8 @@
 package gm.facade.fee.entity.fee;
 
+import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
+import gm.facade.fee.constant.WorkingFlagType;
 import gm.facade.fee.entity.base.FreightDoc;
 import lombok.Data;
 
@@ -209,14 +211,15 @@ public class OutDeliveryDocFee extends FreightDoc {
 
     @FieldName(name = "委外配送服务线路补贴")
     @Column(name = "outsourcing_subsidy")
-    private String outsourcingSubsidy;
+    private Double outsourcingSubsidy;
 
     /**
-     * 非正常工作时段标识
+     * 非常规工作时段标志(该字段默认值为“无”，可选择“工作日/休息日/节假日”)
      */
-    @FieldName(name = "非正常工作时段标识")
-    @Column( name = "abnormal_working_flag")
-    private Boolean abnormalWorkingFlag;
+    @FieldName(name = "非常规工作时段标志")
+    @Column(name = "unconventional_working_flag")
+    @SerializedName("UNCONVENTIONAL_WORKING_FLAG")
+    private WorkingFlagType unconventionalWorkingFlag;
 
     /**
      * 非正常工作时段补贴系数
@@ -246,12 +249,7 @@ public class OutDeliveryDocFee extends FreightDoc {
     @Column( name = "train_num_fee")
     private Double trainNumFee;
 
-    /**
-     * 加班时长
-     */
-    @FieldName(name = "加班时长")
-    @Column( name = "overtime_hours")
-    private Double overtimeHours;
+
 
     /**
      * 加班费
@@ -261,10 +259,17 @@ public class OutDeliveryDocFee extends FreightDoc {
     private Double overtimePay;
 
     /**
+     * 加班时长
+     */
+    @FieldName(name = "加班时长")
+    @Column( name = "overtime_hours")
+    private Double overtimeHours;
+
+    /**
      * 干线收货服务时长
      */
     @FieldName(name = "干线收货服务时长")
-    @Column( name = "trunk_line_receive_duration")
+    @Column( name = "trunk_line_receive_hours")
     private Double trunkLineReceiveDuration;
 
     /**
