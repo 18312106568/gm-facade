@@ -230,4 +230,18 @@ public class CarRentalDtlFee extends FreightDtl {
     @Transient
     private Double holidayOvertimePayLimit;
 
+    /**
+     * 超公里数服务费
+     */
+    @FieldName(name = "日租额定公里数")
+    @Transient
+    private Double dailyKilometreLimit;
+
+    /**
+     * 超公里数服务费
+     */
+    @FieldName(name = "日超公里数")
+    @Transient
+    private Double dailyKilometreOver;
+
 }

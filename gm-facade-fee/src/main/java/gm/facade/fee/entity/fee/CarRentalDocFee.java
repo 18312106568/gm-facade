@@ -103,4 +103,10 @@ public class CarRentalDocFee extends FreightDoc {
     @Transient
     private Double holidayOvertimePay;
 
+    /**
+     * 超公里数服务费
+     */
+    @FieldName(name = "日超公里数")
+    @Transient
+    private Double dailyKilometre;
 }
