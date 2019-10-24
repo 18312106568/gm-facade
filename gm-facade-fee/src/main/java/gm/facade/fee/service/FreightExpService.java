@@ -28,4 +28,9 @@ public interface FreightExpService {
      */
     List<FreightExpSource> getFreightExpSources(
             FreightMode freightMode,FreightExpType expType);
+
+    /**
+     * 更新计费公式
+     */
+    void initFreightExp();
 }

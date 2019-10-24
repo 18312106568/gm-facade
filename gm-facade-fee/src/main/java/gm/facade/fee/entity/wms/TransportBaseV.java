@@ -803,6 +803,7 @@ public class TransportBaseV extends Freight {
     /**
      * 委外配送服务线路补贴
      */
+    @FieldName(name = "委外配送服务线路补贴")
     @Column(name = "outsourcing_subsidy")
     private Double outsourcingSubsidy;
 
@@ -810,14 +811,14 @@ public class TransportBaseV extends Freight {
      * 加班时长
      */
     @FieldName(name = "加班时长")
-    @Column( name = "overtime_hours")
+    @Column( name = "OVERTIME_HOURS")
     private Double overtimeHours;
 
     /**
      * 干线收货服务时长
      */
     @FieldName(name = "干线收货服务时长")
-    @Column( name = "trunk_line_receive_hours")
+    @Column( name = "TRUNK_LINE_RECEIVE_HOURS")
     private Double trunkLineReceiveDuration;
 
     /**
@@ -881,5 +882,12 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "计费用医疗上架件数")
     @Transient
     private Integer costMedicalShelvesNum;
+
+    /**
+     * 运输日期（年月）
+     */
+    @FieldName(name = "运输日期（年月）")
+    @Transient
+    private Date transportMonth;
 
 }

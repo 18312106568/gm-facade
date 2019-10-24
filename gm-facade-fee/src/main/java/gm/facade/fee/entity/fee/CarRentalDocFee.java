@@ -7,6 +7,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -79,5 +80,27 @@ public class CarRentalDocFee extends FreightDoc {
     @FieldName(name = "超公里数服务费")
     @Column( name = "over_kilometre_fee")
     private Double overKilometreFee;
+
+
+    /**
+     * 休息日加班费
+     */
+    @FieldName(name = "休息日加班费")
+    @Transient
+    private Double restOvertimePay;
+
+    /**
+     * 休息日加班费
+     */
+    @FieldName(name = "工作日加班费")
+    @Transient
+    private Double weekdayOvertimePay;
+
+    /**
+     * 节假日加班费
+     */
+    @FieldName(name = "节假日加班费")
+    @Transient
+    private Double holidayOvertimePay;
 
 }

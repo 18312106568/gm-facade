@@ -8,6 +8,7 @@ import lombok.Data;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.Date;
 
 /**
@@ -25,7 +26,12 @@ public class CarRentalDtlFee extends FreightDtl {
     @Column( name = "warehouse")
     private String warehouse;
 
-
+    /**
+     * 运输日期
+     */
+    @FieldName(name = "运输日期")
+    @Column( name = "transport_date")
+    private Date transportDate;
 
     /**
      * 车牌号码
@@ -70,11 +76,11 @@ public class CarRentalDtlFee extends FreightDtl {
     private Integer childDeliveryPointNum;
 
     /**
-     * 总箱数
+     * 送货件数
      */
-    @FieldName(name = "总箱数")
-    @Column( name = "total_box_num")
-    private Integer totalBoxNum;
+    @FieldName(name = "送货件数")
+    @Column( name = "DELIVERY_NUM")
+    private Integer deliveryNum;
 
     /**
      * 冷藏箱数
@@ -159,5 +165,69 @@ public class CarRentalDtlFee extends FreightDtl {
     @FieldName(name = "附加费用说明")
     @Column( name = "additional_costs_remark")
     private String additionalCostsRemark;
+
+
+    /**
+     * 运输日期（年月）
+     */
+    @FieldName(name = "运输日期（年月）")
+    @Transient
+    private Date transportMonth;
+
+    /**
+     * 休息日加班费
+     */
+    @FieldName(name = "休息日加班费")
+    @Transient
+    private Double restOvertimePay;
+
+    /**
+     * 休息日加班费
+     */
+    @FieldName(name = "工作日加班费")
+    @Transient
+    private Double weekdayOvertimePay;
+
+    /**
+     * 节假日加班费
+     */
+    @FieldName(name = "节假日加班费")
+    @Transient
+    private Double holidayOvertimePay;
+
+    /**
+     * 休息日加班费
+     */
+    @FieldName(name = "休息日加班费率")
+    @Transient
+    private Double restOvertimeRate;
+
+    /**
+     * 休息日加班费
+     */
+    @FieldName(name = "工作日加班费率")
+    @Transient
+    private Double weekdayOvertimeRate;
+
+    /**
+     * 节假日加班费
+     */
+    @FieldName(name = "节假日加班费率")
+    @Transient
+    private Double holidayOvertimeRate;
+
+    /**
+     * 休息日加班费
+     */
+    @FieldName(name = "休息日加班费限额")
+    @Transient
+    private Double restOvertimePayLimit;
+
+    /**
+     * 节假日加班费
+     */
+    @FieldName(name = "节假日加班费限额")
+    @Transient
+    private Double holidayOvertimePayLimit;
 
 }
