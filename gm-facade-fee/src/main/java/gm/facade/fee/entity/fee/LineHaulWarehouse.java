@@ -6,10 +6,7 @@ import gm.facade.fee.constant.SpecialVehicleType;
 import gm.facade.fee.entity.base.FreightDtl;
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -21,6 +18,7 @@ import java.io.Serializable;
 public class LineHaulWarehouse implements Serializable {
 
 
+    @Id
     @Column(name = "docid")
     @FieldName(name = "总单ID")
     private Long docId;

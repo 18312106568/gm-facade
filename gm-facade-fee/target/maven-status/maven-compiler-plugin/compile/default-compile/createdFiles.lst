@@ -36,6 +36,7 @@ gm\facade\fee\entity\wms\TransportLogistic.class
 gm\facade\fee\entity\fee\LineHaulDocFee.class
 gm\facade\fee\entity\fee\OutDeliveryDocFee.class
 gm\facade\fee\entity\base\FreightDtl.class
+gm\facade\fee\entity\fee\LineHaulWarehouse.class
 gm\facade\fee\entity\base\Statisticable.class
 gm\facade\fee\entity\FreightConfigItem.class
 gm\facade\fee\constant\ReceiptStatus.class
