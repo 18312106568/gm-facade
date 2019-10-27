@@ -116,4 +116,11 @@ public class PointPartsDeliveryDtlFee extends FreightDtl {
     @FieldName(name = "点件总运费")
     @Column( name = "total_point_freight")
     private Double totalPointFreight;
+
+    /**
+     * 点件计费模式客户服务类型
+     */
+    @Transient
+    @FieldName(name = "点件客户类型")
+    private CustomType djCustomType;
 }

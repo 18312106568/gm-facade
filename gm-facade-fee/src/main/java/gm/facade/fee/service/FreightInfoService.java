@@ -1,6 +1,7 @@
 package gm.facade.fee.service;
 
 import gm.facade.fee.constant.CalculateType;
+import gm.facade.fee.constant.FeeStatus;
 import gm.facade.fee.constant.FreightExpType;
 import gm.facade.fee.entity.FreightMode;
 import gm.facade.fee.entity.base.Freight;
@@ -70,4 +71,16 @@ public interface FreightInfoService {
      * @return
      */
     Freight dtlManualUpdate(Freight freight,FreightMode freightMode);
+
+
+    /**
+     * 是否存在计费单
+     * @param freightMode
+     * @param expType
+     * @param batchNo
+     * @param feeStatus
+     * @return
+     */
+    Boolean existsFreight(FreightMode freightMode
+            , FreightExpType expType,Long batchNo, FeeStatus feeStatus);
 }

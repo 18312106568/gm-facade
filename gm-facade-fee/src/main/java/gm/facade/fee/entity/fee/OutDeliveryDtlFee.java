@@ -274,4 +274,11 @@ public class OutDeliveryDtlFee extends FreightDtl {
     @Transient
     @FieldName(name = "当日同车配送次数")
     private Integer branchDepartureNum;
+
+    /**
+     * 城市
+     */
+    @FieldName(name = "城市")
+    @Transient
+    private String city;
 }

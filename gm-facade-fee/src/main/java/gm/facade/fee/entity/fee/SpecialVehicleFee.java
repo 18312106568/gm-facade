@@ -1,6 +1,7 @@
 package gm.facade.fee.entity.fee;
 
 import gm.common.base.annotation.FieldName;
+import gm.facade.fee.constant.SpecialVehicleType;
 import gm.facade.fee.entity.base.FreightDoc;
 import lombok.Data;
 
@@ -85,7 +86,7 @@ public class SpecialVehicleFee extends FreightDoc {
      */
     @FieldName(name = "专车车型1")
     @Column( name = "special_vehicle_type1")
-    private String specialVehicleType1;
+    private SpecialVehicleType specialVehicleType1;
 
     /**
      * 专车车型1车次数
@@ -106,7 +107,7 @@ public class SpecialVehicleFee extends FreightDoc {
      */
     @FieldName(name = "专车车型2")
     @Column( name = "special_vehicle_type2")
-    private String specialVehicleType2;
+    private SpecialVehicleType specialVehicleType2;
 
     /**
      * 专车车型2车次数
@@ -127,7 +128,7 @@ public class SpecialVehicleFee extends FreightDoc {
      */
     @FieldName(name = "专车车型3")
     @Column( name = "special_vehicle_type3")
-    private String specialVehicleType3;
+    private SpecialVehicleType specialVehicleType3;
 
     /**
      * 专车车型3车次数

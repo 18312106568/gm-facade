@@ -217,7 +217,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "专车车次1")
     @Column(name = "special_train_num1")
     @SerializedName("SPECIAL_TRAIN_NUM1")
-    private String specialTrainNum1;
+    private Integer specialTrainNum1;
 
     /**
      * 单程/往返1(须在WMS中增加功能进行手工维护)
@@ -250,7 +250,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "专车车次2")
     @Column(name = "special_train_num2")
     @SerializedName("SPECIAL_TRAIN_NUM2")
-    private Boolean specialTrainNum2;
+    private Integer specialTrainNum2;
 
     /**
      * 单程/往返2(须在WMS中增加功能进行手工维护)
@@ -283,7 +283,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "专车车次3")
     @Column(name = "special_train_num3")
     @SerializedName("SPECIAL_TRAIN_NUM3")
-    private String specialTrainNum3;
+    private Integer specialTrainNum3;
 
     /**
      * 单程/往返3(须在WMS中增加功能进行手工维护)

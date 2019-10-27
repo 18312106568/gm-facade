@@ -38,4 +38,14 @@ public interface FreightConfigService {
       */
      Map<Long, FreightConfigItem> getFreightConfigItem(FreightMode freightMode
              , Freight freight, FreightExpType expType, Long specialId);
+
+     /**
+      * 获取运价表明细
+      * @param freightMode
+      * @param freight
+      * @param fieldValueMap
+      * @return
+      */
+     Map<Long, FreightConfigItem> getFreightConfigItem(FreightMode freightMode
+             ,Freight freight,Map<FreightField,Object> fieldValueMap);
 }
