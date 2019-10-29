@@ -9,6 +9,7 @@ gm\facade\fee\entity\fee\OutDeliveryDtlFee.class
 gm\facade\fee\entity\wms\TransportBaseHangUp.class
 gm\facade\fee\constant\FieldDomainType.class
 gm\facade\fee\service\FreightStatisticService.class
+gm\facade\fee\constant\FreightModeType.class
 gm\facade\fee\entity\base\BackFillable.class
 gm\facade\fee\entity\wms\TransportSettle.class
 gm\facade\fee\entity\wms\TransportBase.class
@@ -66,5 +67,6 @@ gm\facade\fee\entity\fee\PointPartsDeliveryDocFee.class
 gm\facade\fee\constant\FieldType.class
 gm\facade\fee\constant\SpecialVehicleType.class
 gm\facade\fee\entity\base\IdEntity.class
+gm\facade\fee\entity\wms\TransportTrunk.class
 gm\facade\fee\constant\CalculateType.class
 gm\facade\fee\entity\fee\CarRentalDocFee.class

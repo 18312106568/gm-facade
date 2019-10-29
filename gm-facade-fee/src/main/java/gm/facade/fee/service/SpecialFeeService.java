@@ -18,4 +18,16 @@ public interface SpecialFeeService {
     List<Long> computeFee(Date transportDate
             ,Long operatorId,Long logisticMode,CalculateType calculateType);
 
+    /**
+     * 根据运输日期范围以及物流模式计费
+     * @param startDate
+     * @param endDate
+     * @param operatorId
+     * @param logisticMode
+     * @param calculateType
+     * @return
+     */
+    List<Long> computeFee(Date startDate, Date endDate
+            , Long operatorId, Long logisticMode, CalculateType calculateType);
+
 }

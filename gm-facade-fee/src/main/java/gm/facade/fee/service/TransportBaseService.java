@@ -62,6 +62,16 @@ public interface TransportBaseService {
     List<TransportBaseV> findTransportBaseV(Date startDate,Date endDate,Boolean isHangUp);
 
     /**
+     * 按时间维度物流模式获取签收单
+     * @param startDate
+     * @param endDate
+     * @param isHangUp
+     * @param logisticsMode
+     * @return
+     */
+    List<TransportBaseV> findTransportBaseV(Date startDate, Date endDate, Boolean isHangUp,Long logisticsMode);
+
+    /**
      * 根据关系键id获取签收单
      * @param mappingIds
      * @return

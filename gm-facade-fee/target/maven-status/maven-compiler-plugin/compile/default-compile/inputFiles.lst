@@ -4,6 +4,7 @@ E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\Transport
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\FreightConfigService.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\fee\OutDeliveryDtlFee.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\FreightMode.java
+E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FreightModeType.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\fee\CarRentalManual.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\FreightInfoService.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\base\FreightDtl.java
