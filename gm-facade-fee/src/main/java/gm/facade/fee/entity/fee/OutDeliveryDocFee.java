@@ -218,7 +218,6 @@ public class OutDeliveryDocFee extends FreightDoc {
      */
     @FieldName(name = "非常规工作时段标志")
     @Column(name = "unconventional_working_flag")
-    @SerializedName("UNCONVENTIONAL_WORKING_FLAG")
     private WorkingFlagType unconventionalWorkingFlag;
 
     /**
@@ -226,7 +225,7 @@ public class OutDeliveryDocFee extends FreightDoc {
      */
     @FieldName(name = "非正常工作时段补贴系数")
     @Column( name = "abnormal_working_coefficient")
-    private Integer abnormalWorkingCoefficient;
+    private Double abnormalWorkingCoefficient;
 
     /**
      * 各项服务费汇总

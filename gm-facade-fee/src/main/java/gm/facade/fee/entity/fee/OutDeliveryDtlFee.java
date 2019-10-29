@@ -249,7 +249,6 @@ public class OutDeliveryDtlFee extends FreightDtl {
      */
     @FieldName(name = "非常规工作时段标志")
     @Column(name = "unconventional_working_flag")
-    @SerializedName("UNCONVENTIONAL_WORKING_FLAG")
     private WorkingFlagType unconventionalWorkingFlag;
 
 

@@ -5,6 +5,7 @@ import gm.common.base.annotation.FieldName;
 import gm.facade.fee.constant.FreightPayStatus;
 import gm.facade.fee.constant.ReceiptStatus;
 import gm.facade.fee.constant.ReceiptType;
+import gm.facade.fee.constant.SpecialVehicleType;
 import gm.facade.fee.entity.base.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -425,7 +426,7 @@ public class TransportBase extends Freight
     @FieldName(name = "是否为回程车2")
     @Column(name = "return_train2")
     @SerializedName("RETURN_TRAIN2")
-    private String returnTrain2;
+    private Boolean isReturnTrain2;
 
     /**
      * 专车车型3(须在WMS中增加功能进行手工维护)
@@ -587,7 +588,7 @@ public class TransportBase extends Freight
     @FieldName(name = "干线车型")
     @Column(name = "trunk_model")
     @SerializedName("TRUNK_MODEL")
-    private String trunkModel;
+    private SpecialVehicleType trunkModel;
 
     /**
      * 支线车牌号码(取自WMS《装车单查询》/《签收单领用》)
@@ -879,6 +880,20 @@ public class TransportBase extends Freight
     @Column(name = "foam_box_send_num")
     @SerializedName("FOAM_BOX_SEND_NUM")
     private Integer foamBoxSendNum;
+
+    /**
+     * 加班时长
+     */
+    @FieldName(name = "加班时长")
+    @Column( name = "OVERTIME_HOURS")
+    private Double overtimeHours;
+
+    /**
+     * 干线收货服务时长
+     */
+    @FieldName(name = "干线收货服务时长")
+    @Column( name = "TRUNK_LINE_RECEIVE_HOURS")
+    private Double trunkLineReceiveDuration;
 
 //    /**
 //     * 计费模式ID

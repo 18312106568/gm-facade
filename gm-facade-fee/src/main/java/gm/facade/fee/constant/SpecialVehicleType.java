@@ -16,12 +16,14 @@ public enum SpecialVehicleType {
     //2
     NORMAL9_6,
 
+    //3
     NORMAL12_6,
 
+    //4
     NORMAL16_5,
 
     /**
-     * 冷藏专车
+     * 冷藏专车 >=5
      */
     COLD4_3,
 

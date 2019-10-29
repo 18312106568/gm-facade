@@ -266,7 +266,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "是否为回程车2")
     @Column(name = "return_train2")
     @SerializedName("RETURN_TRAIN2")
-    private String returnTrain2;
+    private Boolean isReturnTrain2;
 
     /**
      * 专车车型3(须在WMS中增加功能进行手工维护)
@@ -421,7 +421,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "干线车型")
     @Column(name = "trunk_model")
     @SerializedName("TRUNK_MODEL")
-    private String trunkModel;
+    private SpecialVehicleType trunkModel;
 
     /**
      * 支线车牌号码(取自WMS《装车单查询》/《签收单领用》)
@@ -889,5 +889,12 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "运输日期（年月）")
     @Transient
     private Date transportMonth;
+
+    /**
+     * 是否冷藏车
+     */
+    @FieldName(name = "是否冷藏车")
+    @Transient
+    public Boolean isCold;
 
 }
