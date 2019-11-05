@@ -1,11 +1,13 @@
 package gm.facade.fee.service;
 
+import gm.common.base.sql.SimpleCondition;
 import gm.facade.fee.constant.CustomType;
 import gm.facade.fee.entity.FreightGroupDj;
 import gm.facade.fee.entity.wms.TransportAddress;
 import gm.facade.fee.entity.wms.TransportBase;
 import gm.facade.fee.entity.wms.TransportBaseV;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +55,16 @@ public interface TransportBaseService {
     List<TransportBaseV> findTransportBaseV(Date transportDate,Long logisticMode);
 
     /**
+     * 根据日期、承运商、物流模式获取签收单
+     * @param transportDate
+     * @param carrier
+     * @param logisticMode
+     * @return
+     */
+    List<TransportBaseV> findTransportBaseV(
+            Date transportDate,String carrier,Long logisticMode);
+
+    /**
      * 按时间维度获取签收单
      * @param startDate
      * @param endDate
@@ -70,6 +82,18 @@ public interface TransportBaseService {
      * @return
      */
     List<TransportBaseV> findTransportBaseV(Date startDate, Date endDate, Boolean isHangUp,Long logisticsMode);
+
+    /**'
+     * 按时间维度物流模式承运商获取签收单
+     * @param startDate
+     * @param endDate
+     * @param carrier
+     * @param isHangUp
+     * @param logisticsMode
+     * @return
+     */
+    List<TransportBaseV> findTransportBaseV(Date startDate
+            , Date endDate,String carrier, Boolean isHangUp,Long logisticsMode);
 
     /**
      * 根据关系键id获取签收单
@@ -104,6 +128,16 @@ public interface TransportBaseService {
      * @return
      */
     CustomType getDjGroupCache(TransportBaseV transportBaseV);
+
+
+    /**
+     * 查询签收单
+     * @param mainAndCondition
+     * @param mainOrCondition
+     * @return
+     */
+    List<TransportBaseV>  search(Collection<SimpleCondition> mainAndCondition
+            , Collection<SimpleCondition> mainOrCondition);
 
 
 }

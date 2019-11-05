@@ -15,5 +15,10 @@ public enum CalculateType {
      * 实付
      */
     PAYMENT
-    ;
+    ,
+
+    /**
+     * 补付
+     */
+    REPLENSH;
 }

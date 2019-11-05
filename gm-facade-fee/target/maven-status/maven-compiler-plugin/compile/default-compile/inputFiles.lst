@@ -50,6 +50,7 @@ E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\base\Param
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\service\FreightExpService.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FreightExpType.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\fee\PointPartsDeliveryDtlFee.java
+E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportTrunk.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\base\BaseEntity.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\CalculateType.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FieldType.java
