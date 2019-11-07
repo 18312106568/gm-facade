@@ -49,6 +49,7 @@ gm\facade\fee\entity\wms\TransportAddress.class
 gm\facade\fee\entity\FreightExpSource.class
 gm\facade\fee\constant\FeeStatus.class
 gm\facade\fee\service\FreightConfigService.class
+gm\facade\fee\exception\FeeException.class
 gm\facade\fee\constant\ReceiptType.class
 gm\facade\fee\constant\CustomType.class
 gm\facade\fee\constant\FreightPayStatus.class

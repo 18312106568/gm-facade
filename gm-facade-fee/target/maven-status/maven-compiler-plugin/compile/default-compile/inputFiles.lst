@@ -25,6 +25,7 @@ E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\WorkingF
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportBase.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\FreightStatistic.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportBaseV.java
+E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\exception\FeeException.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportBaseFeeMapping.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\base\IdEntity.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FreightPayStatus.java
@@ -42,6 +43,7 @@ E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\FieldDom
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\FreightGroupDj.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\fee\OutDeliveryDocFee.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\fee\ExpressDocFee.java
+E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\wms\TransportDepartureTime.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\base\BackFillable.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\entity\FreightExp.java
 E:\project\gm-facade\gm-facade-fee\src\main\java\gm\facade\fee\constant\StatisticType.java
