@@ -123,6 +123,12 @@ public interface TransportBaseService {
     void setDjGroupCache(FreightGroupDj freightGroupDj);
 
     /**
+     * 设置点件计费模式客户类型
+     * @param freightGroupDjId
+     */
+    void setDjGroupCache(Long freightGroupDjId);
+
+    /**
      * 获取点件计费模式客户类型
      * @param transportBaseV
      * @return

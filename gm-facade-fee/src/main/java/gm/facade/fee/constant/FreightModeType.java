@@ -26,4 +26,11 @@ public enum FreightModeType {
     //租车
     CARRENTAL
     ;
+
+    public static FreightModeType getFreightType(Long modeId){
+        if(modeId>8L || modeId<0L) {
+            return null;
+        }
+        return FreightModeType.values()[modeId.intValue()];
+    }
 }

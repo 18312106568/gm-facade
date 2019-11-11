@@ -72,7 +72,7 @@ public class ExpressDocFee extends FreightDoc {
      */
     @FieldName(name = "代收货款金额")
     @Column( name = "collection_amount")
-    private String collectionAmount;
+    private Double collectionAmount;
 
     /**
      * 代收货款服务费

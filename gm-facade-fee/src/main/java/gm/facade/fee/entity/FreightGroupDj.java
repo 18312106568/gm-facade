@@ -50,7 +50,7 @@ public class FreightGroupDj extends BaseEntity {
     /**
      * 客户类型 0-医疗 1-商业 2-商业
      */
-    @FieldName(name = "客户类型")
+    @FieldName(name = "计费客户类型")
     @Column(name = "cost_customer_type")
     @SerializedName(value = "COST_CUSTOMER_TYPE")
     @Enumerated(EnumType.ORDINAL)

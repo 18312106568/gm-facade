@@ -44,6 +44,15 @@ public interface FreightInfoService {
             , CalculateType calculateType, Long operatorId, Long batchNo);
 
     /**
+     * 根据总单Id 作废签收单
+     * @param docIds
+     * @param freightMode
+     * @param operatorId
+     * @return
+     */
+    Integer disableFreight(List<Long> docIds,FreightMode freightMode,Long operatorId);
+
+    /**
      * 批量作废
      * @param freightMode
      * @param expType

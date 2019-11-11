@@ -194,7 +194,7 @@ public class PieceDeliveryFee extends FreightDoc {
      */
     @FieldName(name = "透析液标志")
     @Column( name = "dialysate_markers")
-    private String dialysateMarkers;
+    private Boolean dialysateMarkers;
 
     /**
      * 透析液自提标志

@@ -1,6 +1,8 @@
 package gm.facade.fee.entity.fee;
 
 import gm.common.base.annotation.FieldName;
+import gm.facade.fee.constant.ReceiptStatus;
+import gm.facade.fee.constant.ReceiptType;
 import gm.facade.fee.entity.base.FreightDoc;
 import gm.facade.fee.entity.base.FreightDtl;
 import lombok.Data;
@@ -137,7 +139,7 @@ public class ExpressDtlFee extends FreightDtl {
      */
     @FieldName(name = "代收货款金额")
     @Column( name = "collection_amount")
-    private String collectionAmount;
+    private Double collectionAmount;
 
     /**
      * 代收货款服务费
@@ -214,14 +216,14 @@ public class ExpressDtlFee extends FreightDtl {
      */
     @FieldName(name = "签收单状态")
     @Column( name = "receipt_status")
-    private String receiptStatus;
+    private ReceiptStatus receiptStatus;
 
     /**
      * 签收单类型
      */
     @FieldName(name = "签收单类型")
     @Column( name = "receipt_type")
-    private String receiptType;
+    private ReceiptType receiptType;
 
     /**
      * 起运仓库

@@ -370,7 +370,7 @@ public class TransportBase extends Freight
     @FieldName(name = "专车车型1")
     @Column(name = "special_vehicle_type1")
     @SerializedName("SPECIAL_VEHICLE_MODEL1")
-    private String specialVehicleType1;
+    private SpecialVehicleType specialVehicleType1;
 
     /**
      * 专车车次1(须在WMS中增加功能进行手工维护)
@@ -402,7 +402,7 @@ public class TransportBase extends Freight
     @FieldName(name = "专车车型2")
     @Column(name = "special_vehicle_type2")
     @SerializedName("SPECIAL_VEHICLE_TYPE2")
-    private String specialVehicleType2;
+    private SpecialVehicleType specialVehicleType2;
 
     /**
      * 专车车次2(须在WMS中增加功能进行手工维护)
@@ -434,7 +434,7 @@ public class TransportBase extends Freight
     @FieldName(name = "专车车型3")
     @Column(name = "special_vehicle_type3")
     @SerializedName("SPECIAL_VEHICLE_TYPE3")
-    private String specialVehicleType3;
+    private SpecialVehicleType specialVehicleType3;
 
     /**
      * 专车车次3(须在WMS中增加功能进行手工维护)
