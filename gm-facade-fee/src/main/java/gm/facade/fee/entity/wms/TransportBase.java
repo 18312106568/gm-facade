@@ -2,10 +2,7 @@ package gm.facade.fee.entity.wms;
 
 import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
-import gm.facade.fee.constant.FreightPayStatus;
-import gm.facade.fee.constant.ReceiptStatus;
-import gm.facade.fee.constant.ReceiptType;
-import gm.facade.fee.constant.SpecialVehicleType;
+import gm.facade.fee.constant.*;
 import gm.facade.fee.entity.base.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -60,13 +57,19 @@ public class TransportBase extends Freight
     private String shippingType;
 
     /**
-     * 物流模式(取自WMS《签收单查询》/《签收单重派记录查询》)
+     * 计费系统物流模式
      */
     @FieldName(name = "物流模式")
     @Column(name = "logistics_mode")
     @SerializedName("LOGISTICS_MODE")
     private Long logisticsMode;
 
+    /**
+     * 物流模式(取自WMS《签收单查询》/《签收单重派记录查询》)
+     */
+    @FieldName(name = "物流模式")
+    @Column(name = "org_logistics_mode")
+    private Long orgLogisticsMode;
     /**
      * 客户名称(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
@@ -503,9 +506,8 @@ public class TransportBase extends Freight
     /**
      * 送货失败原因分类(取自WMS《送货失败数据录入》)
      */
-    @FieldName(name = "送货失败原因分类")
+    @FieldName(name = "挂起原因")
     @Column(name = "failure_reson")
-    @SerializedName("FAILURE_RESON")
     private String failureReson;
 
     /**
@@ -515,6 +517,15 @@ public class TransportBase extends Freight
     @Column(name = "failure_details")
     @SerializedName("FAILURE_DETAILS")
     private String failureDetails;
+
+
+    /**
+     * 送货失败原因分类(取自WMS《送货失败数据录入》)
+     */
+    @FieldName(name = "送货失败原因分类")
+    @Column(name = "failure_details_type")
+    @SerializedName("FAILURE_RESON")
+    private String failureDetailsType;
 
     /**
      * 线路名称(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -636,7 +647,7 @@ public class TransportBase extends Freight
     @FieldName(name = "笼车交接单回单确认标识")
     @Column(name = "cage_car_confirmation_flag")
     @SerializedName("CAGE_CAR_CONFIRMATION_FLAG")
-    private String cageCarConfirmationFlag;
+    private Boolean cageCarConfirmationFlag;
 
     /**
      * 温度计回收计费标志(对于含有冷藏商品的签收单，默认“是”，其余为“否”。)
@@ -676,7 +687,7 @@ public class TransportBase extends Freight
     @FieldName(name = "非常规工作时段标志")
     @Column(name = "unconventional_working_flag")
     @SerializedName("UNCONVENTIONAL_WORKING_FLAG")
-    private String unconventionalWorkingFlag;
+    private WorkingFlagType unconventionalWorkingFlag;
 
     /**
      * 取消订单标志(负数签收单的该字段默认值为“是”。其它签收单默认为“否”)
@@ -895,6 +906,27 @@ public class TransportBase extends Freight
     @Column( name = "TRUNK_LINE_RECEIVE_HOURS")
     private Double trunkLineReceiveDuration;
 
+
+    /**
+     * 干线路线ID
+     */
+    @FieldName(name = "干线路线ID")
+    @Column( name = "TRUNK_LINE_ID")
+    private Long trunkLineId;
+
+    /**
+     * 经停仓库
+     */
+    @FieldName(name = "经停仓库")
+    @Column( name = "stopped_warehouse")
+    private String stoppedWarehouse;
+
+    /**
+     * 经停仓库数
+     */
+    @FieldName(name = "经停仓库数")
+    @Column( name = "stopped_warehouse_number")
+    private Integer stoppedWarehouseNumber;
 //    /**
 //     * 计费模式ID
 //     */

@@ -232,7 +232,7 @@ public class OutDeliveryDocFee extends FreightDoc {
      */
     @FieldName(name = "各项服务费汇总")
     @Column( name = "summary_service_charges")
-    private String summaryServiceCharges;
+    private Double summaryServiceCharges;
 
     /**
      * 保底收费

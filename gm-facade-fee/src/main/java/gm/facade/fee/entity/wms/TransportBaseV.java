@@ -469,7 +469,7 @@ public class TransportBaseV extends Freight {
     @FieldName(name = "笼车交接单回单确认标识")
     @Column(name = "cage_car_confirmation_flag")
     @SerializedName("CAGE_CAR_CONFIRMATION_FLAG")
-    private String cageCarConfirmationFlag;
+    private Boolean cageCarConfirmationFlag;
 
     /**
      * 温度计回收计费标志(对于含有冷藏商品的签收单，默认“是”，其余为“否”。)
@@ -897,4 +897,25 @@ public class TransportBaseV extends Freight {
     @Transient
     public Boolean isCold;
 
+
+    /**
+     * 干线路线ID
+     */
+    @FieldName(name = "干线路线ID")
+    @Column( name = "TRUNK_LINE_ID")
+    private Long trunkLineId;
+
+    /**
+     * 经停仓库
+     */
+    @FieldName(name = "经停仓库")
+    @Column( name = "STOPPED_WAREHOUSE")
+    private String stoppedWarehouse;
+
+    /**
+     * 经停仓库数
+     */
+    @FieldName(name = "经停仓库数")
+    @Column( name = "STOPPED_WAREHOUSE_NUMBER")
+    private Integer stoppedWarehouseNumber;
 }

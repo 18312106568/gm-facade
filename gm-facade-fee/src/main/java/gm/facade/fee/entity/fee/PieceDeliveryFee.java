@@ -1,6 +1,8 @@
 package gm.facade.fee.entity.fee;
 
 import gm.common.base.annotation.FieldName;
+import gm.facade.fee.constant.ReceiptStatus;
+import gm.facade.fee.constant.ReceiptType;
 import gm.facade.fee.entity.base.FreightDoc;
 import lombok.Data;
 
@@ -257,14 +259,14 @@ public class PieceDeliveryFee extends FreightDoc {
      */
     @FieldName(name = "签收单状态")
     @Column( name = "receipt_status")
-    private String receiptStatus;
+    private ReceiptStatus receiptStatus;
 
     /**
      * 签收单类型
      */
     @FieldName(name = "签收单类型")
     @Column( name = "receipt_type")
-    private String receiptType;
+    private ReceiptType receiptType;
 
     /**
      * 起运仓库

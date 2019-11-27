@@ -192,8 +192,7 @@ public class OutDeliveryDtlFee extends FreightDtl {
      * 二次分货服务费
      */
     @FieldName(name = "二次分货服务费")
-    //@Column( name = "second_distribution_fee")
-    @Transient
+    @Column( name = "second_distribution_fee")
     private Double secondDistributionFee;
 
     /**

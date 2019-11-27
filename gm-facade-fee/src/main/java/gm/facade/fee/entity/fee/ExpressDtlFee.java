@@ -151,9 +151,9 @@ public class ExpressDtlFee extends FreightDtl {
     /**
      * 货到收款服务计费标志
      */
-    @FieldName(name = "货到收款服务计费标志")
-    @Column( name = "charging_flag")
-    private Boolean chargingFlag;
+    @FieldName(name = "收款确认标志")
+    @Column( name = "recconfirmflag")
+    private Boolean recconfirmFlag;
 
     /**
      * 签收单总运费

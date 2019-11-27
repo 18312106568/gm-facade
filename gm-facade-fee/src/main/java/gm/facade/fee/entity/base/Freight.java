@@ -5,6 +5,7 @@ import gm.common.base.annotation.FieldName;
 import gm.facade.fee.constant.CalculateType;
 import gm.facade.fee.constant.FeeStatus;
 import gm.facade.fee.entity.wms.TransportBaseFeeMapping;
+import gm.facade.fee.entity.wms.TransportBaseV;
 import lombok.Data;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
@@ -100,4 +101,10 @@ public abstract class Freight implements Serializable {
      */
     @Transient
     private Long specialConfigId;
+
+    /**
+     * 子列表
+     */
+    @Transient
+    private List<Freight> childFreightList;
 }

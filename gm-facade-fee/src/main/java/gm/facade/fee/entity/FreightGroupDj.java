@@ -6,13 +6,55 @@ import gm.facade.fee.constant.CustomType;
 import gm.facade.fee.constant.FreightExpType;
 import gm.facade.fee.entity.base.BaseEntity;
 import lombok.Data;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Entity
 @Table(name = "jf_freight_group_sp_dj",catalog = "点件模式特殊表")
-public class FreightGroupDj extends BaseEntity {
+public class FreightGroupDj implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column(name = "docid")
+    @FieldName(name = "主键ID")
+    private Long id;
+
+    /**
+     * 创建时间
+     */
+    @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
+    @Column(name = "create_time")
+    @FieldName(name = "创建时间")
+    private Date createTime;
+
+    /**
+     * 更改时间
+     */
+    @Temporal(TemporalType.TIMESTAMP)
+    @LastModifiedDate
+    @Column(name = "update_time")
+    @FieldName(name = "更改时间")
+    private Date updateTime;
+
+    /**
+     * 创建人
+     */
+    @Column(name = "create_by")
+    @FieldName(name = "创建人ID")
+    private Long createBy;
+
+    /**
+     * 更改人
+     */
+    @Column(name = "update_by")
+    @FieldName(name = "更改人ID")
+    private Long updateBy;
 
 
     /**

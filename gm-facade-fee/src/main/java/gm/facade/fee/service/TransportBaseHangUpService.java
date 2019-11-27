@@ -2,6 +2,8 @@ package gm.facade.fee.service;
 
 import gm.facade.fee.entity.wms.TransportBase;
 
+import java.util.Date;
+
 public interface TransportBaseHangUpService {
 
     /**
@@ -16,4 +18,11 @@ public interface TransportBaseHangUpService {
      * @param receiptId
      */
     void hangUpTransportBase(Long loadingListId,Long receiptId);
+
+
+    /**
+     * 签收单规划路线
+     * @param transportDate
+     */
+    void planTrunkLine(Date transportDate);
 }

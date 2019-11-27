@@ -22,6 +22,7 @@ gm\facade\fee\entity\fee\LineHaulDtlFee.class
 gm\facade\fee\service\TransportBaseService.class
 gm\facade\fee\entity\wms\TransportBaseV.class
 gm\facade\fee\constant\StatisticType.class
+gm\facade\fee\service\ShareService.class
 gm\facade\fee\service\FreightGroupService.class
 gm\facade\fee\entity\wms\TransportBaseFeeMapping$Identity.class
 gm\facade\fee\entity\FreightStatistic.class

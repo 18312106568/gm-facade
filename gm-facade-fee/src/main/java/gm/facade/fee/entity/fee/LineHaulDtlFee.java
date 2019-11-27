@@ -70,6 +70,21 @@ public class LineHaulDtlFee extends FreightDtl {
     private String groundDepot;
 
     /**
+     * 车型费用
+     */
+    @Transient
+    @FieldName(name = "车型费用")
+    private Double vehicleFee;
+
+
+    /**
+     * 干线路线ID
+     */
+    @Transient
+    @FieldName(name = "干线路线ID")
+    private Long trunkLineId;
+
+    /**
      * 经停仓库
      */
     @FieldName(name = "经停仓库")
@@ -77,11 +92,11 @@ public class LineHaulDtlFee extends FreightDtl {
     private String stoppedWarehouse;
 
     /**
-     * 车型费用
+     * 经停仓库数
      */
     @Transient
-    @FieldName(name = "车型费用")
-    private Double vehicleFee;
+    @FieldName(name = "经停仓库数")
+    private Integer stoppedWarehouseNumber;
 }
 
 

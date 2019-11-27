@@ -74,6 +74,14 @@ public interface FreightInfoService {
     List<Freight> getFreightDtlInfo(FreightMode freightMode,Long docId);
 
     /**
+     * 获取总单信息
+     * @param freightMode
+     * @param docId
+     * @return
+     */
+    Freight getFreightDocInfo(FreightMode freightMode,Long docId);
+
+    /**
      * 细单手工录入更新
      * @param freight
      * @param freightMode
