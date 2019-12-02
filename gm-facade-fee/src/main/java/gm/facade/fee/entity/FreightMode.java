@@ -29,6 +29,12 @@ public class FreightMode extends BaseEntity {
     @Column(name = "is_multiple")
     private Boolean isMultiple;
 
+    /**
+     * 计费系统物流模式IDS
+     */
+    @FieldName(name = "物流模式IDS")
+    @Column(name = "logistics_mode_ids")
+    private String logisticsModeIds;
 
 
 }

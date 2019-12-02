@@ -54,13 +54,6 @@ public class TransportBaseV extends Freight {
     @SerializedName("SHIPPING_TYPE")
     private String shippingType;
 
-    /**
-     * 物流模式(取自WMS《签收单查询》/《签收单重派记录查询》)
-     */
-    @FieldName(name = "物流模式")
-    @Column(name = "logistics_mode")
-    @SerializedName("LOGISTICS_MODE")
-    private Long logisticsMode;
 
     /**
      * 客户名称(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -305,7 +298,7 @@ public class TransportBaseV extends Freight {
      * 专车业务类型(须在WMS中增加功能进行手工维护)
      */
     @FieldName(name = "专车业务类型")
-    @Column(name = "special_vehicl_bize_type")
+    @Column(name = "special_vehicle_biz_type")
     @SerializedName("SPECIAL_VEHICL_BIZE_TYPE")
     private String specialVehiclBizeType;
 
@@ -392,20 +385,20 @@ public class TransportBaseV extends Freight {
     private ReceiptType receiptType;
 
     /**
-     * 笼车交接总单ID(取自WMS《笼车交接单管理》)
-     */
-    @FieldName(name = "笼车交接总单ID")
-    @Column(name = "cage_car_ids")
-    @SerializedName("CAGE_CAR_IDS")
-    private String cageCarIds;
-
-    /**
      * 干线线路(WMS《路线管理》中的“干线线路”字段)
      */
     @FieldName(name = "干线线路")
     @Column(name = "trunkline")
     @SerializedName("TRUNKLINE")
     private String trunkline;
+
+    /**
+     * 笼车交接总单ID(取自WMS《笼车交接单管理》)
+     */
+    @FieldName(name = "笼车交接总单ID")
+    @Column(name = "cage_car_ids")
+    @SerializedName("CAGE_CAR_IDS")
+    private String cageCarIds;
 
     /**
      * 干线车牌号码(干线业务取自WMS《笼车交接单管理》；非干线业务取自取自WMS《装车单查询》)

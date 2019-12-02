@@ -22,7 +22,7 @@ public enum ReceiptStatus {
     DISABLE,
 
     @SerializedName("1")
-    CONFIRM(),
+    CONFIRM,
 
     @SerializedName("2")
     PART_SUCCESS,

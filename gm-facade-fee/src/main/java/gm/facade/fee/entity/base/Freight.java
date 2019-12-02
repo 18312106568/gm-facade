@@ -87,6 +87,13 @@ public abstract class Freight implements Serializable {
     private Date transportDate;
 
     /**
+     * 计费系统物流模式
+     */
+    @FieldName(name = "物流模式")
+    @Column(name = "logistics_mode")
+    private Long logisticsMode;
+
+    /**
      * 签收单ids
      */
 //    @Column(name = "base_ids")

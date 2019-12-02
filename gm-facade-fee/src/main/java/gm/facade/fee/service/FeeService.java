@@ -24,19 +24,19 @@ public interface FeeService {
      * @param calculateType
      * @return
      */
-    List<Long> computeFee(Date transportDate
-            , Long operatorId, CalculateType calculateType);
+//    List<Long> computeFee(Date transportDate
+//            , Long operatorId, CalculateType calculateType);
 
     /**
-     * 根据运输日期以及物流模式计费
+     * 根据运输日期以及计费模式计费
      * @param transportDate
      * @param operatorId
-     * @param logisticMode
      * @param calculateType
+     * @param modeId
      * @return
      */
     List<Long> computeFee(Date transportDate
-            ,Long operatorId,Long logisticMode,CalculateType calculateType);
+            ,Long operatorId,CalculateType calculateType,Long modeId);
 
     /**
      * 根据自选参数计费
@@ -46,10 +46,25 @@ public interface FeeService {
      * @param mainOrCondition
      * @return
      */
+//    List<Long> computeFee(Long operatorId
+//            ,CalculateType calculateType
+//            ,Collection<SimpleCondition> mainAndCondition
+//            ,Collection<SimpleCondition> mainOrCondition);
+
+    /**
+     * 根据自选参数计费
+     * @param operatorId
+     * @param calculateType
+     * @param mainAndCondition
+     * @param mainOrCondition
+     * @param modeId
+     * @return
+     */
     List<Long> computeFee(Long operatorId
             ,CalculateType calculateType
             ,Collection<SimpleCondition> mainAndCondition
-            ,Collection<SimpleCondition> mainOrCondition);
+            ,Collection<SimpleCondition> mainOrCondition
+            ,Long modeId);
 
     /**
      * 按时间维度计算签收单
@@ -59,8 +74,8 @@ public interface FeeService {
      * @param calculateType
      * @return
      */
-    List<Long> computeFee(Date startDate,Date endDate
-            , Long operatorId, CalculateType calculateType);
+//    List<Long> computeFee(Date startDate,Date endDate
+//            , Long operatorId, CalculateType calculateType);
 
     /**
      * 时间范围加物流模式
@@ -71,8 +86,21 @@ public interface FeeService {
      * @param calculateType
      * @return
      */
+//    List<Long> computeFee(Date startDate,Date endDate
+//            , Long operatorId,Long logisticMode, CalculateType calculateType);
+
+
+    /**
+     * 时间范围加计费模式ID
+     * @param startDate
+     * @param endDate
+     * @param operatorId
+     * @param modeId
+     * @param calculateType
+     * @return
+     */
     List<Long> computeFee(Date startDate,Date endDate
-            , Long operatorId,Long logisticMode, CalculateType calculateType);
+            , Long operatorId,Long modeId, CalculateType calculateType);
 
 
     /**

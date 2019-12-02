@@ -36,4 +36,12 @@ public interface FreightModeService {
      * @return
      */
     FreightMode getFreightMode(Long modeId);
+
+
+    /**
+     * 通过计费模式ID获取物流模式IDS
+     * @param modeId
+     * @return
+     */
+    List<Long> getTransportLogisticsModeIds(Long modeId);
 }

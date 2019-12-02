@@ -1,7 +1,9 @@
 package gm.facade.fee.entity.wms;
 
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import gm.common.base.annotation.FieldName;
+import gm.facade.fee.adapter.BooleanTypeAdapter;
 import gm.facade.fee.constant.*;
 import gm.facade.fee.entity.base.*;
 import lombok.AllArgsConstructor;
@@ -57,18 +59,11 @@ public class TransportBase extends Freight
     private String shippingType;
 
     /**
-     * 计费系统物流模式
-     */
-    @FieldName(name = "物流模式")
-    @Column(name = "logistics_mode")
-    @SerializedName("LOGISTICS_MODE")
-    private Long logisticsMode;
-
-    /**
      * 物流模式(取自WMS《签收单查询》/《签收单重派记录查询》)
      */
     @FieldName(name = "物流模式")
     @Column(name = "org_logistics_mode")
+    @SerializedName("LOGISTICS_MODE")
     private Long orgLogisticsMode;
     /**
      * 客户名称(取自WMS《签收单查询》/《签收单重派记录查询》)
@@ -397,6 +392,7 @@ public class TransportBase extends Freight
     @FieldName(name = "是否为回程车1")
     @Column(name = "is_return_train1")
     @SerializedName("IS_RETURN_TRAIN1")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean isReturnTrain1;
 
     /**
@@ -413,7 +409,7 @@ public class TransportBase extends Freight
     @FieldName(name = "专车车次2")
     @Column(name = "special_train_num2")
     @SerializedName("SPECIAL_TRAIN_NUM2")
-    private Boolean specialTrainNum2;
+    private Integer specialTrainNum2;
 
     /**
      * 单程/往返2(须在WMS中增加功能进行手工维护)
@@ -429,6 +425,7 @@ public class TransportBase extends Freight
     @FieldName(name = "是否为回程车2")
     @Column(name = "return_train2")
     @SerializedName("RETURN_TRAIN2")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean isReturnTrain2;
 
     /**
@@ -461,6 +458,7 @@ public class TransportBase extends Freight
     @FieldName(name = "是否为回程车3")
     @Column(name = "is_return_train3")
     @SerializedName("IS_RETURN_TRAIN3")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean isReturnTrain3;
 
     /**
@@ -570,20 +568,22 @@ public class TransportBase extends Freight
     private ReceiptType receiptType;
 
     /**
-     * 笼车交接总单ID(取自WMS《笼车交接单管理》)
-     */
-    @FieldName(name = "笼车交接总单ID")
-    @Column(name = "cage_car_ids")
-    @SerializedName("CAGE_CAR_IDS")
-    private String cageCarIds;
-
-    /**
      * 干线线路(WMS《路线管理》中的“干线线路”字段)
      */
     @FieldName(name = "干线线路")
     @Column(name = "trunkline")
     @SerializedName("TRUNKLINE")
     private String trunkline;
+
+
+
+    /**
+     * 笼车交接总单ID(取自WMS《笼车交接单管理》)
+     */
+    @FieldName(name = "笼车交接总单ID")
+    @Column(name = "cage_car_ids")
+    @SerializedName("CAGE_CAR_IDS")
+    private String cageCarIds;
 
     /**
      * 干线车牌号码(干线业务取自WMS《笼车交接单管理》；非干线业务取自取自WMS《装车单查询》)
@@ -647,6 +647,7 @@ public class TransportBase extends Freight
     @FieldName(name = "笼车交接单回单确认标识")
     @Column(name = "cage_car_confirmation_flag")
     @SerializedName("CAGE_CAR_CONFIRMATION_FLAG")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean cageCarConfirmationFlag;
 
     /**
@@ -655,6 +656,7 @@ public class TransportBase extends Freight
     @FieldName(name = "温度计回收计费标志")
     @Column(name = "thermometer_recovery_flag")
     @SerializedName("THERMOMETER_RECOVERY_FLAG")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean thermometerRecoveryFlag;
 
     /**
@@ -663,6 +665,7 @@ public class TransportBase extends Freight
     @FieldName(name = "温度计发运标志")
     @Column(name = "thermometer_delivery_flag")
     @SerializedName("THERMOMETER_DELIVERY_FLAG")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean thermometerDeliveryFlag;
 
     /**
@@ -679,6 +682,7 @@ public class TransportBase extends Freight
     @FieldName(name = "货到收款服务计费标志")
     @Column(name = "charging_flag")
     @SerializedName("CHARGING_FLAG")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean chargingFlag;
 
     /**
@@ -695,6 +699,7 @@ public class TransportBase extends Freight
     @FieldName(name = "取消订单标志")
     @Column(name = "cancel_order_flag")
     @SerializedName("CANCEL_ORDER_FLAG")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean cancelOrderFlag;
 
     /**
@@ -824,6 +829,7 @@ public class TransportBase extends Freight
     @FieldName(name = "信息修改标志")
     @Column(name = "information_modification_mark")
     @SerializedName("INFORMATION_MODIFICATION_MARK")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean informationModificationMark;
 
 
@@ -837,6 +843,7 @@ public class TransportBase extends Freight
     @FieldName(name = "签收单挂起状态")
     @Column(name = "is_hang_up")
     @SerializedName("IS_HANG_UP")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean isHangUp;
 
    /* @FieldName(name = "目的地客户服务类型")
@@ -875,6 +882,7 @@ public class TransportBase extends Freight
     @FieldName(name = "收款确认标志")
     @Column(name = "recconfirmflag")
     @SerializedName("RECCONFIRMFLAG")
+    @JsonAdapter(BooleanTypeAdapter.class)
     private Boolean recconfirmFlag;
 
     @FieldName(name = "租车服务商")

@@ -31,6 +31,7 @@ gm\facade\fee\constant\FreightExpSourceType.class
 gm\facade\fee\service\FreightBackfillService.class
 gm\facade\fee\service\TransportBaseHangUpService.class
 gm\facade\fee\constant\FreightConfigType.class
+gm\facade\fee\adapter\BooleanTypeAdapter$1.class
 gm\facade\fee\entity\FreightConfig.class
 gm\facade\fee\entity\FreightField.class
 gm\facade\fee\service\FreightModeService.class
@@ -42,6 +43,7 @@ gm\facade\fee\entity\fee\LineHaulWarehouse.class
 gm\facade\fee\entity\base\Statisticable.class
 gm\facade\fee\entity\FreightConfigItem.class
 gm\facade\fee\constant\ReceiptStatus.class
+gm\facade\fee\adapter\BooleanTypeAdapter.class
 gm\facade\fee\entity\fee\ExpressDocFee.class
 gm\facade\fee\entity\base\Parametable.class
 gm\facade\fee\entity\wms\TransportBase$Identity.class
